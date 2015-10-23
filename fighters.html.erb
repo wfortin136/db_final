@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title>DB Final: Fighters</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" />
+</head>
+<body>
+  <% require 'mysql' %>
+  <%# my = Mysql.new(hostname, username, password, databasename)%> 
+  <% con = Mysql.new('localhost', 'mma_site', 'mpcs53001', 'mma')%>
+  <% @fighters = con.query('select * from fighters')%>
+  <%  con.close%>
+  <h1> Fighters </h1>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="23%">Fighter</th>
+        <th width="7%">Wins</th>
+        <th width="7%">Losses</th>
+        <th width="7%">Draws</th>
+        <th width="7%">No Contests</th>
+        <th width="44%"></th>
+      </tr>
+    <tbody>
+      <% @fighters.each do|fighter|%>  
+      <%# puts fighter%>
+      <tr>
+        <td>
+          <% fighter[0] %>
+        </td>
+        <td>
+          <%# Fighter%>
+          <a href="fighterdetails.html.erb?fid=<%=fighter[0]%>"><%= fighter[1] %></a>
+        </td>
+        <td>
+          <%# Wins%>
+          <%= fighter[2] %>
+        </td>
+        <td>
+          <%# Losses%>
+          <%= fighter[3] %>
+        </td>
+        <td>
+          <%# Draws%>
+          <%= fighter[4] %>
+        </td>
+        <td>
+          <%# No Contests%>
+          <%= fighter[5] %>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
+</html>

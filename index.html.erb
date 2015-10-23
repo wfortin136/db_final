@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>DB Final: Index</title>
+</head>
+<body>
+  <h1>MPCS 53001 Web UI Using Ruby and CGI</h1>
+  <h3>List of Functions:</h3>
+    <ul>
+      <li> (1) <a href="tables.html.erb">List Tables</a>: Displays all the tables and their row counts from the database</li>
+      <li> (2) <a href="fightcards.html.erb">List Fightcards</a>: Displays all Fightcards and some general details of fightcard</li>
+        <ul>
+          <li> (3) List Fights on Fightcard: Get the fights on a fightcard by selecting the fightcard from the Fightcard list (function 2) </li>
+          <li> (4) List Fight Stats: Get the fight stats of a fight selected from Fightcarddetails.html.erb (function 3)</li>
+          <li> (5) List Judgescores: Judgescores are combined with the fight stats in table in Fightdetails.html.erb</li>
+        </ul>	
+      <li> (6) <a href="fighters.html.erb">List Fighters</a></li>
+        <ul>
+          <li> (7) List round and total stats of fighter, selected from the list of fighters in fighters.html.erb</li>
+        </ul>	
+      <li> (8) <a href="judges.html.erb">List Judges</a></li>
+      <li> Search Database: Seach for a term across database. Functions will search across Fightcard Names, Fightcard Locations, 
+      Fighter Names and Judges Names.</li>
+        <ul>
+          <li> (9) Search Fightcards</li>
+          <li> (10) Search Fighters</li>
+          <li> (11) Search Judges</li>
+        </ul>	
+        <form method=get action="search.html.erb">
+          <b>Enter A Search Term:</b><br />
+          <input type="text" name="search"><br />
+          <input type="submit" value="Submit">
+        </form>
+        Example Search Terms:
+        <ul>
+          <li type="square">"for": Return across all 3</li>
+          <li type="square">"Fight": Return only on Fightcards</li>
+          <li type="square">"Fahey": Return only on Fighters</li>
+          <li type="square">"Chauncy": Return only on Judges</li>
+        </ul>
+      </ul>
+  <h3> Description</h3>
+  <p> 
+</body>
+</html>

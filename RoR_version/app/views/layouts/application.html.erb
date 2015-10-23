@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>U Score Fights</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js' %>
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" %>
+  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">UScoreIt</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/fights">Fights</a></li>
+          <li><a href="/fightcards">FightCards</a></li>
+          <li><a href="/fighters">Fighters</a></li>
+          <li><a href="/judges">Judges</a></li>
+          <li><a href="/scorecards">Scorecards</a></li>
+          <form action="/fights" class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input value="<%= params[:keyword] %>" name="keyword" type="text" class="form-control" placeholder="Search Fights">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if session[:user_id] %>
+            <li><p class="navbar-text">Score It <%= User.find(session[:user_id]).name %>!<p></li>
+            <li><a href="/account?id=<%= session[:user_id] %>">My Account</a></li>
+            <li><a href="/logout">Sign Out</a></li>
+          <%else%>
+            <li><a href="/users/new">Sign Up</a></li>
+            <li><a href="/sessions/new">Sign In</a></li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div> 
+  </nav>
+
+  <div class="container">
+    <% if flash[:notice].present? %>
+      <div class="alert alert-info">
+        <%= flash[:notice] %>
+      </div>
+    <%end%>
+    <%= yield %>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+::1::UFC Fight Night: Belfort vs. Henderson 3::1::2015-11-07
+::1::UFC Fight Night: Holohan vs. Smolka::2::2015-10-24
+::1::UFC 192: Cormier vs. Gustafsson::3::2015-10-03
+::1::UFC Fight Night: Barnett vs. Nelson::4::2015-09-27
+::1::UFC 191: Johnson vs. Dodson 2::5::2015-09-05
+::1::UFC Fight Night: Holloway vs. Oliveira::6::2015-08-23
+::1::UFC Fight Night: Teixeira vs. Saint Preux::7::2015-08-08
+::1::UFC 190: Rousey vs. Correia::8::2015-08-01
+::1::UFC on Fox: Dillashaw vs. Barão 2::9::2015-07-25
+::1::UFC Fight Night: Bisping vs. Leites::10::2015-07-18
+::1::UFC Fight Night: Mir vs. Duffee::11::2015-07-15
+::1::The Ultimate Fighter: American Top Team vs. Blackzilians Finale::5::2015-07-12
+::1::UFC 189: Mendes vs. McGregor::5::2015-07-11
+::1::UFC Fight Night: Machida vs. Romero::12::2015-06-27
+::1::UFC Fight Night: Jędrzejczyk vs. Penne::13::2015-06-20
+::1::UFC 188: Velasquez vs. Werdum::14::2015-06-13
+::1::UFC Fight Night: Boetsch vs. Henderson::15::2015-06-06
+::1::UFC Fight Night: Condit vs. Alves::16::2015-05-30
+::1::UFC 187: Johnson vs. Cormier::5::2015-05-23
+::1::UFC Fight Night: Edgar vs. Faber::17::2015-05-16
+::1::UFC Fight Night: Miocic vs. Hunt::18::2015-05-10
+::1::UFC 186: Johnson vs. Horiguchi::19::2015-04-25
+::1::UFC on Fox: Machida vs. Rockhold::20::2015-04-18
+::1::UFC Fight Night: Gonzaga vs. Cro Cop 2::21::2015-04-11
+::1::UFC Fight Night: Mendes vs. Lamas::22::2015-04-04
+::1::UFC Fight Night: Maia vs. LaFlare::8::2015-03-21
+::1::UFC 185: Pettis vs. dos Anjos::23::2015-03-14
+::1::UFC 184: Rousey vs. Zingano::24::2015-02-28
+::1::UFC Fight Night: Bigfoot vs. Mir::25::2015-02-22
+::1::UFC Fight Night: Henderson vs. Thatch::26::2015-02-14
+::1::UFC 183: Silva vs. Diaz::5::2015-01-31
+::1::UFC on Fox: Gustafsson vs. Johnson::27::2015-01-24
+::1::UFC Fight Night: McGregor vs. Siver::28::2015-01-18
+::1::UFC 182: Jones vs. Cormier::5::2015-01-03
+::1::UFC Fight Night: Machida vs. Dollaway::29::2014-12-20
+::1::UFC on Fox: dos Santos vs. Miocic::30::2014-12-13
+::1::The Ultimate Fighter: A Champion Will Be Crowned Finale::5::2014-12-12
+::1::UFC 181: Hendricks vs. Lawler II::5::2014-12-06
+::1::UFC Fight Night: Edgar vs. Swanson::31::2014-11-22
+::1::UFC 180: Werdum vs. Hunt::14::2014-11-15
+::1::UFC Fight Night: Shogun vs. Saint Preux::32::2014-11-08
+::1::UFC Fight Night: Rockhold vs. Bisping::33::2014-11-08
+::1::UFC 179: Aldo vs. Mendes 2::8::2014-10-25
+::1::UFC Fight Night: MacDonald vs. Saffiedine::34::2014-10-04
+::1::UFC Fight Night: Nelson vs. Story::27::2014-10-04
+::1::UFC 178: Johnson vs. Cariaso::5::2014-09-27
+::1::UFC Fight Night: Hunt vs. Nelson::4::2014-09-20
+::1::UFC Fight Night: Bigfoot vs. Arlovski::35::2014-09-13
+::1::UFC Fight Night: Jacaré vs. Mousasi::36::2014-09-05
+::1::UFC 177: Dillashaw vs. Soto::37::2014-08-30
+::1::UFC Fight Night: Henderson vs. dos Anjos::38::2014-08-23
+::1::UFC Fight Night: Bisping vs. Le::39::2014-08-23
+::1::UFC Fight Night: Bader vs. Saint Preux::40::2014-08-16
+::1::UFC 176: Aldo vs. Mendes II::24::2014-08-02
+::1::UFC on Fox: Lawler vs. Brown::41::2014-07-26
+::1::UFC Fight Night: McGregor vs. Brandao::2::2014-07-19
+::1::UFC Fight Night: Cerrone vs. Miller::42::2014-07-16
+::1::The Ultimate Fighter: Team Edgar vs. Team Penn Finale::5::2014-07-06
+::1::UFC 175: Weidman vs. Machida::5::2014-07-05
+::1::UFC Fight Night: Swanson vs. Stephens::43::2014-06-28
+::1::UFC Fight Night: Te Huna vs. Marquardt::44::2014-06-28
+::1::UFC 174: Johnson vs. Bagautinov::45::2014-06-14
+::1::UFC Fight Night: Henderson vs. Khabilov::46::2014-06-07
+::1::The Ultimate Fighter Brazil 3 Finale: Miocic vs. Maldonado::1::2014-05-31
+::1::UFC Fight Night: Munoz vs. Mousasi::13::2014-05-31
+::1::UFC 173: Barão vs. Dillashaw::5::2014-05-24
+::1::UFC Fight Night: Brown vs. Silva::47::2014-05-10
+::1::UFC 172: Jones vs. Teixeira::48::2014-04-26
+::1::UFC on Fox: Werdum vs. Browne::49::2014-04-19
+::1::The Ultimate Fighter Nations Finale: Bisping vs. Kennedy::50::2014-04-16
+::1::UFC Fight Night: Nogueira vs. Nelson::51::2014-04-11
+::1::UFC Fight Night: Shogun vs. Henderson 2::52::2014-03-23
+::1::UFC 171: Hendricks vs. Lawler::23::2014-03-15
+::1::UFC Fight Night: Gustafsson vs. Manuwa::53::2014-03-08
+::1::The Ultimate Fighter China Finale: Kim vs. Hathaway::39::2014-03-01
+::1::UFC 170: Rousey vs. McMann::5::2014-02-22
+::1::UFC Fight Night: Machida vs. Mousasi::54::2014-02-15
+::1::UFC 169: Barao vs. Faber II::20::2014-02-01
+::1::UFC on Fox: Henderson vs. Thomson::9::2014-01-25
+::1::UFC Fight Night: Rockhold vs. Philippou::55::2014-01-15
+::1::UFC Fight Night: Saffiedine vs. Lim::56::2014-01-04
+::1::UFC 168: Weidman vs. Silva 2::5::2013-12-28
+::1::UFC on Fox: Johnson vs. Benavidez 2::37::2013-12-14
+::1::UFC Fight Night: Hunt vs. Bigfoot::57::2013-12-07
+::1::The Ultimate Fighter: Team Rousey vs. Team Tate Finale::5::2013-11-30
+::1::UFC 167: St-Pierre vs. Hendricks::5::2013-11-16
+::1::UFC Fight Night: Belfort vs. Henderson::16::2013-11-09
+::1::UFC: Fight for the Troops 3::58::2013-11-06
+::1::UFC Fight Night: Machida vs. Munoz::59::2013-10-26
+::1::UFC 166: Velasquez vs. Dos Santos 3::3::2013-10-19
+::1::UFC Fight Night: Maia vs. Shields::29::2013-10-09
+::1::UFC 165: Jones vs. Gustafsson::60::2013-09-21
+::1::UFC Fight Night: Teixeira vs. Bader::61::2013-09-04
+::1::UFC 164: Henderson vs. Pettis::62::2013-08-31
+::1::UFC Fight Night: Condit vs. Kampmann 2::63::2013-08-28
+::1::UFC Fight Night: Shogun vs. Sonnen::28::2013-08-17
+::1::UFC 163: Aldo vs. Korean Zombie::8::2013-08-03
+::1::UFC on Fox: Johnson vs. Moraga::64::2013-07-27
+::1::UFC 162: Silva vs. Weidman::5::2013-07-06
+::1::UFC 161: Evans vs. Henderson::65::2013-06-15
+::1::UFC on Fuel TV: Nogueira vs. Werdum::66::2013-06-08
+::1::UFC 160: Velasquez vs. Bigfoot 2::5::2013-05-25
+::1::UFC on FX: Belfort vs. Rockhold::54::2013-05-18
+::1::UFC 159: Jones vs. Sonnen::20::2013-04-27
+::1::UFC on Fox: Henderson vs. Melendez::41::2013-04-20
+::1::The Ultimate Fighter: Team Jones vs. Team Sonnen Finale::5::2013-04-13
+::1::UFC on Fuel TV: Mousasi vs. Latifi::27::2013-04-06
+::1::UFC 158: St-Pierre vs. Diaz::19::2013-03-16
+::1::UFC on Fuel TV: Silva vs. Stann::4::2013-03-03
+::1::UFC 157: Rousey vs. Carmouche::67::2013-02-23
+::1::UFC on Fuel TV: Barao vs. McDonald::53::2013-02-16
+::1::UFC 156: Aldo vs. Edgar::5::2013-02-02
+::1::UFC on Fox: Johnson vs. Dodson::9::2013-01-26
+::1::UFC on FX: Belfort vs. Bisping::1::2013-01-19
+::1::UFC 155: dos Santos vs. Velasquez 2::5::2012-12-29
+::1::The Ultimate Fighter: Team Carwin vs. Team Nelson Finale::5::2012-12-15
+::1::UFC on FX: Sotiropoulos vs. Pearson::68::2012-12-15
+::1::UFC on Fox: Henderson vs. Diaz::64::2012-12-08
+::1::UFC 154: St-Pierre vs. Condit::19::2012-11-17
+::1::UFC on Fuel TV: Franklin vs. Le::39::2012-11-10
+::1::UFC 153: Silva vs. Bonnar::8::2012-10-13
+::1::UFC on FX: Browne vs. Bigfoot::69::2012-10-05
+::1::UFC on Fuel TV: Struve vs. Miocic::70::2012-09-29
+::1::UFC 152: Jones vs. Belfort::60::2012-09-22
+::1::UFC 151: Jones vs. Henderson::5::2012-09-01
+::1::UFC 150: Henderson vs. Edgar II::71::2012-08-11
+::1::UFC on Fox: Shogun vs. Vera::24::2012-08-04
+::1::UFC 149: Faber vs. Barao::72::2012-07-21
+::1::UFC on Fuel TV: Munoz vs. Weidman::41::2012-07-11
+::1::UFC 148: Silva vs. Sonnen II::5::2012-07-07
+::1::UFC 147: Silva vs. Franklin II::61::2012-06-23
+::1::UFC on FX: Maynard vs. Guida::42::2012-06-22
+::1::UFC on FX: Johnson vs. McCall::73::2012-06-08
+::1::The Ultimate Fighter: Live Finale::5::2012-06-01
+::1::UFC 146: dos Santos vs. Mir::5::2012-05-26
+::1::UFC on Fuel TV: Korean Zombie vs. Poirier::22::2012-05-15
+::1::UFC on Fox: Diaz vs. Miller::74::2012-05-05
+::1::UFC 145: Jones vs. Evans::75::2012-04-21
+::1::UFC on Fuel TV: Gustafsson vs. Silva::27::2012-04-14
+::1::UFC on FX: Alves vs. Kampmann::33::2012-03-03
+::1::UFC 144: Edgar vs. Henderson::4::2012-02-26
+::1::UFC on Fuel TV: Sanchez vs. Ellenberger::76::2012-02-15
+::1::UFC 143: Diaz vs. Condit::5::2012-02-04
+::1::UFC on Fox: Evans vs. Davis::9::2012-01-28
+::1::UFC on FX: Guillard vs. Miller::7::2012-01-20
+::1::UFC 142: Aldo vs. Mendes::8::2012-01-14
+::1::UFC 141: Lesnar vs. Overeem::5::2011-12-30
+::1::UFC 140: Jones vs. Machida::60::2011-12-10
+::1::The Ultimate Fighter: Team Bisping vs. Team Miller Finale::5::2011-12-03
+::1::UFC 139: Shogun vs. Henderson::41::2011-11-19
+::1::UFC on Fox: Velasquez vs. dos Santos::67::2011-11-12
+::1::UFC 138: Leben vs. Munoz::77::2011-11-05
+::1::UFC 137: Penn vs. Diaz::5::2011-10-29
+::1::UFC 136: Edgar vs. Maynard III::3::2011-10-08
+::1::UFC Live: Cruz vs. Johnson::78::2011-10-01
+::1::UFC 135: Jones vs. Rampage::71::2011-09-24
+::1::UFC Fight Night: Shields vs. Ellenberger::15::2011-09-17
+::1::UFC 134: Silva vs. Okami::8::2011-08-27
+::1::UFC Live: Hardy vs. Lytle::62::2011-08-14
+::1::UFC 133: Evans vs. Ortiz::79::2011-08-06
+::1::UFC 132: Cruz vs. Faber::5::2011-07-02
+::1::UFC Live: Kongo vs. Barry::80::2011-06-26
+::1::UFC 131: dos Santos vs. Carwin::45::2011-06-11
+::1::The Ultimate Fighter: Team Lesnar vs. Team dos Santos Finale::5::2011-06-04
+::1::UFC 130: Rampage vs. Hamill::5::2011-05-28
+::1::UFC 129: St-Pierre vs. Shields::60::2011-04-30
+::1::UFC Fight Night: Nogueira vs. Davis::64::2011-03-26
+::1::UFC 128: Shogun vs. Jones::20::2011-03-19
+::1::UFC Live: Sanchez vs. Kampmann::81::2011-03-03
+::1::UFC 127: Penn vs. Fitch::33::2011-02-27
+::1::UFC 126: Silva vs. Belfort::5::2011-02-05
+::1::UFC: Fight for the Troops 2::82::2011-01-22
+::1::UFC 125: Resolution::5::2011-01-01
+::1::UFC 124: St-Pierre vs. Koscheck 2::19::2010-12-11
+::1::The Ultimate Fighter: Team GSP vs. Team Koscheck Finale::5::2010-12-04
+::1::UFC 123: Rampage vs. Machida::83::2010-11-20
+::1::UFC 122: Marquardt vs. Okami::84::2010-11-13
+::1::UFC 121: Lesnar vs. Velasquez::67::2010-10-23
+::1::UFC 120: Bisping vs. Akiyama::53::2010-10-16
+::1::UFC 119: Mir vs. Cro Cop::63::2010-09-25
+::1::UFC Fight Night: Marquardt vs. Palhares::31::2010-09-15
+::1::UFC 118: Edgar vs. Penn 2::28::2010-08-28
+::1::UFC 117: Silva vs. Sonnen::85::2010-08-07
+::1::UFC Live: Jones vs. Matyushenko::11::2010-08-01
+::1::UFC 116: Lesnar vs. Carwin::5::2010-07-03
+::1::The Ultimate Fighter: Team Liddell vs. Team Ortiz Finale::5::2010-06-19
+::1::UFC 115: Liddell vs. Franklin::45::2010-06-12
+::1::UFC 114: Rampage vs. Evans::5::2010-05-29
+::1::UFC 113: Machida vs. Shogun 2::19::2010-05-08
+::1::UFC 112: Invincible::51::2010-04-10
+::1::UFC Fight Night: Florian vs. Gomi::86::2010-03-31
+::1::UFC 111: St. Pierre vs. Hardy::20::2010-03-27
+::1::UFC Live: Vera vs. Jones::26::2010-03-21
+::1::UFC 110: Nogueira vs. Velasquez::33::2010-02-21
+::1::UFC 109: Relentless::5::2010-02-06
+::1::UFC Fight Night: Maynard vs. Diaz::22::2010-01-11
+::1::UFC 108: Evans vs. Silva::5::2010-01-02
+::1::UFC 107: Penn vs. Sanchez::87::2009-12-12
+::1::The Ultimate Fighter: Heavyweights Finale::5::2009-12-05
+::1::UFC 106: Ortiz vs. Griffin 2::5::2009-11-21
+::1::UFC 105: Couture vs. Vera::59::2009-11-14
+::1::UFC 104: Machida vs. Shogun::24::2009-10-24
+::1::UFC 103: Franklin vs. Belfort::23::2009-09-19
+::1::UFC Fight Night: Diaz vs. Guillard::88::2009-09-16
+::1::UFC 102: Couture vs. Nogueira::89::2009-08-29
+::1::UFC 101: Declaration::79::2009-08-08
+::1::UFC 100::5::2009-07-11
+::1::The Ultimate Fighter: United States vs. United Kingdom Finale::5::2009-06-20
+::1::UFC 99: The Comeback::90::2009-06-13
+::1::UFC 98: Evans vs. Machida::5::2009-05-23
+::1::UFC 97: Redemption::19::2009-04-18
+::1::UFC Fight Night: Condit vs. Kampmann::7::2009-04-01
+::1::UFC 96: Jackson vs. Jardine::91::2009-03-07
+::1::UFC 95: Sanchez vs. Stevenson::53::2009-02-21
+::1::UFC Fight Night: Lauzon vs. Stephens::92::2009-02-07
+::1::UFC 94: St-Pierre vs. Penn 2::5::2009-01-31
+::1::UFC 93: Franklin vs. Henderson::2::2009-01-17
+::1::UFC 92: The Ultimate 2008::5::2008-12-27
+::1::The Ultimate Fighter: Team Nogueira vs. Team Mir Finale::5::2008-12-13
+::1::UFC: Fight for the Troops::93::2008-12-10
+::1::UFC 91: Couture vs. Lesnar::5::2008-11-15
+::1::UFC 90: Silva vs. Côté::94::2008-10-25
+::1::UFC 89: Bisping vs. Leben::77::2008-10-18
+::1::UFC Fight Night: Diaz vs. Neer::76::2008-09-17
+::1::UFC 88: Breakthrough::75::2008-09-06
+::1::UFC 87: Seek and Destroy::69::2008-08-09
+::1::UFC Fight Night: Silva vs. Irvin::5::2008-07-19
+::1::UFC 86: Jackson vs. Griffin::5::2008-07-05
+::1::The Ultimate Fighter: Team Rampage vs. Team Forrest Finale::5::2008-06-21
+::1::UFC 85: Bedlam::53::2008-06-07
+::1::UFC 84: Ill Will::5::2008-05-24
+::1::UFC 83: Serra vs. St-Pierre 2::19::2008-04-19
+::1::UFC Fight Night: Florian vs. Lauzon::26::2008-04-02
+::1::UFC 82: Pride of a Champion::91::2008-03-01
+::1::UFC 81: Breaking Point::5::2008-02-02
+::1::UFC Fight Night: Swick vs. Burkman::5::2008-01-23
+::1::UFC 80: Rapid Fire::95::2008-01-19
+::1::UFC 79: Nemesis::5::2007-12-29
+::1::The Ultimate Fighter: Team Hughes vs. Team Serra Finale::5::2007-12-08
+::1::UFC 78: Validation::20::2007-11-17
+::1::UFC 77: Hostile Territory::47::2007-10-20
+::1::UFC 76: Knockout::67::2007-09-22
+::1::UFC Fight Night: Thomas vs. Florian::5::2007-09-19
+::1::UFC 75: Champion vs. Champion::53::2007-09-08
+::1::UFC 74: Respect::5::2007-08-25
+::1::UFC 73: Stacked::37::2007-07-07
+::1::The Ultimate Fighter: Team Pulver vs. Team Penn Finale::5::2007-06-23
+::1::UFC 72: Victory::96::2007-06-16
+::1::UFC Fight Night: Stout vs. Fisher::12::2007-06-12
+::1::UFC 71: Liddell vs. Jackson::5::2007-05-26
+::1::UFC 70: Nations Collide::59::2007-04-21
+::1::UFC 69: Shootout::3::2007-04-07
+::1::UFC Fight Night: Stevenson vs Guillard::5::2007-04-05
+::1::UFC 68: The Uprising::91::2007-03-03
+::1::UFC 67: All or Nothing::5::2007-02-03
+::1::UFC Fight Night: Evans vs. Salmon::12::2007-01-25
+::1::UFC 66: Liddell vs. Ortiz::5::2006-12-30
+::1::UFC Fight Night: Sanchez vs. Riggs::11::2006-12-13
+::1::UFC 65: Bad Intentions::37::2006-11-18
+::1::The Ultimate Fighter: The Comeback Finale::5::2006-11-11
+::1::UFC 64: Unstoppable::5::2006-10-14
+::1::UFC Fight Night 6.5::12::2006-10-10
+::1::UFC 63: Hughes vs. Penn::67::2006-09-23
+::1::UFC 62: Liddell vs. Sobral::5::2006-08-26
+::1::UFC Fight Night 6::5::2006-08-17
+::1::UFC 61: Bitter Rivals::5::2006-07-08
+::1::UFC Fight Night 5::5::2006-06-28
+::1::The Ultimate Fighter: Team Ortiz vs. Team Shamrock Finale::5::2006-06-24
+::1::UFC 60: Hughes vs. Gracie::24::2006-05-27
+::1::UFC 59: Reality Check::67::2006-04-15
+::1::UFC Fight Night 4::5::2006-04-06
+::1::UFC 58: USA vs. Canada::5::2006-03-04
+::1::UFC 57: Liddell vs. Couture 3::5::2006-02-04
+::1::UFC Fight Night 3::5::2006-01-16
+::1::UFC 56: Full Force::5::2005-11-19
+::1::The Ultimate Fighter: Team Hughes vs. Team Franklin Finale::5::2005-11-05
+::1::UFC 55: Fury::97::2005-10-07
+::1::UFC Fight Night 2::5::2005-10-03
+::1::UFC 54: Boiling Point::5::2005-08-20
+::1::UFC Fight Night::5::2005-08-06
+::1::UFC 53: Heavy Hitters::42::2005-06-04
+::1::UFC 52: Couture vs Liddell::5::2005-04-16
+::1::The Ultimate Fighter: Team Couture vs. Team Liddell Finale::5::2005-04-09
+::1::UFC 51: Super Saturday::5::2005-02-05
+::1::UFC 50: The War Of '04::42::2004-10-22
+::1::UFC 49: Unfinished Business::5::2004-08-21
+::1::UFC 48: Payback::5::2004-06-19
+::1::UFC 47: It's On!::5::2004-04-02
+::1::UFC 46: Supernatural::5::2004-01-31
+::1::UFC 45: Revolution::97::2003-11-21
+::1::UFC 44: Undisputed::5::2003-09-26
+::1::UFC 43: Meltdown::5::2003-06-06
+::1::UFC 42: Sudden Impact::98::2003-04-25
+::1::UFC 41: Onslaught::42::2003-02-28
+::1::UFC 40: Vendetta::5::2002-11-22
+::1::UFC 39: The Warriors Return::97::2002-09-27
+::1::UFC 38: Brawl at the Hall::53::2002-07-13
+::1::UFC 37.5: As Real As It Gets::5::2002-06-22
+::1::UFC 37: High Impact::99::2002-05-10
+::1::UFC 36: Worlds Collide::5::2002-03-22
+::1::UFC 35: Throwdown::97::2002-01-11
+::1::UFC 34: High Voltage::5::2001-11-02
+::1::UFC 33: Victory in Vegas::5::2001-09-28
+::1::UFC 32: Showdown in the Meadowlands::74::2001-06-29
+::1::UFC 31: Locked and Loaded::42::2001-05-04
+::1::UFC 30: Battle on the Boardwalk::42::2001-02-23
+::1::UFC 29: Defense of the Belts::100::2000-12-16
+::1::UFC 28: High Stakes::42::2000-11-17
+::1::UFC 27: Ultimate Bad Boyz::15::2000-09-22
+::1::UFC 26: Ultimate Field Of Dreams::101::2000-06-09
+::1::UFC 25: Ultimate Japan 3::100::2000-04-14
+::1::UFC 24: First Defense::102::2000-03-10
+::1::UFC 23: Ultimate Japan 2::103::1999-11-19
+::1::UFC 22: Only One Can be Champion::102::1999-09-24
+::1::UFC 21: Return of the Champions::101::1999-07-16
+::1::UFC 20: Battle for the Gold::104::1999-05-07
+::1::UFC 19: Ultimate Young Guns::105::1999-03-05
+::1::UFC 18: The Road to the Heavyweight Title::15::1999-01-08
+::1::UFC Ultimate Brazil::1::1998-10-16
+::1::UFC 17: Redemption::106::1998-05-15
+::1::UFC 16: Battle in the Bayou::15::1998-03-13
+::1::UFC Japan: Ultimate Japan::107::1997-12-21
+::1::UFC 15: Collision Course::105::1997-10-17
+::1::UFC 14: Showdown::104::1997-07-27
+::1::UFC 13: The Ultimate Force::108::1997-05-30
+::1::UFC 12: Judgement Day::109::1997-02-07
+::1::UFC The Ultimate Ultimate 2::104::1996-12-07
+::1::UFC 11: The Proving Ground::108::1996-09-20
+::1::UFC 10: The Tournament::104::1996-07-12
+::1::UFC 9: Motor City Madness::110::1996-05-17
+::1::UFC 8: David vs. Goliath::111::1996-02-16
+::1::UFC The Ultimate Ultimate::71::1995-12-16
+::1::UFC 7: The Brawl in Buffalo::112::1995-09-08
+::1::UFC 6: Clash of the Titans::113::1995-07-14
+::1::UFC 5: The Return of the Beast::86::1995-04-07
+::1::UFC 4: Revenge of the Warriors::38::1994-12-16
+::1::UFC 3: The American Dream::86::1994-09-09
+::1::UFC 2: No Way Out::71::1994-03-11
+::1::UFC 1: The Beginning::71::1993-11-12

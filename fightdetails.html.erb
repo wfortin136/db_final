@@ -1,0 +1,126 @@
+<html>
+<head>
+  <title>DB Final: Fight Details</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" />
+</head>
+<body>
+  <% require 'mysql' %>
+  <% require 'cgi' %>
+  <% require 'addressable/uri' %>
+  <%# my = Mysql.new(hostname, username, password, databasename)%> 
+  <% con = Mysql.new('localhost', 'mma_site', 'mpcs53001', 'mma')%>
+  <% @uri = Addressable::URI.parse(ENV['REQUEST_URI'])%>
+  <% @fight_id = @uri.query_values["fight_id"]%>
+  <% @query ="select F.fighterName, FS.*
+    from fightstats FS
+    inner join fighters F on FS.fighter_id = F.fighter_id
+    where FS.fight_id = #{@fight_id}
+    order by FS.round, FS.fighter_id"%>
+
+  <% @fight = con.query(@query)%>
+  
+  <% @query = "select P.name, FC.fightcardName, L.city, L.state, L.country, FC.fightDate 
+          from fightcards FC 
+          inner join promotions as P on P.promotion_id = FC.promotion_id
+          inner join locations as L on L.location_id = FC.location_id
+          inner join fights as F on FC.fightcard_id = F.fightcard_id
+          where F.fight_id = #{@fight_id}
+          group by FC.fightcard_id"%>
+  <% @fc_details = con.query(@query)%>
+
+  <% @query = "select score
+      from judgescores
+      where fight_id = #{@fight_id}
+      order by round, fighter_id, judge_id"%>
+  <% @j_scores = con.query(@query)%>
+  
+  <% @query = "select J.judgeName
+      from judgescores JS
+      inner join judges J on J.judge_id = JS.judge_id
+      where JS.fight_id = #{@fight_id}
+      group by JS.judge_id
+      order by JS.judge_id"%>
+  <% @j_names = con.query(@query)%>
+
+  <% con.close%>
+  <% x = @fc_details.fetch_row %>
+
+  <h1> <%= x[1] %> </h1>
+  <h4> <%= x[0] %> </h4>
+  <h4> <%= "#{x[2]}, " %>
+    <% if not x[3] == 'NULL' %>
+      <%= "#{x[3]}, "%>
+    <% end%>
+  <%= x[4] %> </h4>
+  <h4> <%= x[5] %> </h4>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="10%">Fighter</th>
+        <th width="5%">Round</th>
+        <th width="7%">Knockdowns</th>
+        <th width="7%">Strikes Landed</th>
+        <th width="7%">Strikes Thrown</th>
+        <th width="10%">Takedowns Attempted</th>
+        <th width="10%">Takedowns Completed</th>
+        <th width="15%">Submissions Attempted</th>
+        <% @j_names.each do |name|%>
+          <th width="6%"><%= name[0]%></th>
+        <% end%>
+        <th width="5%"></th>
+      </tr>
+    <tbody>
+    <% @fight.each do|entry|%>  
+    <%# puts entry%>
+      <% @j1 = @j_scores.fetch_row%>
+      <% @j2 = @j_scores.fetch_row%>
+      <% @j3 = @j_scores.fetch_row%>
+      <tr>
+        <td>
+          <%# entry[0] %>
+        </td>
+        <td>
+          <%# Fighter%>
+            <a href="fighterdetails.html.erb?fid=<%=entry[3]%>"><%= entry[0] %></a>
+        </td>
+        <td>
+          <%# fighter%>
+          <%= entry[4] %>
+        </td>
+        <td>
+          <%= entry[5] %>
+        </td>
+        <td>
+          <%= entry[6] %>
+        </td>
+        <td>
+          <%= entry[7] %>
+        </td>
+        <td>
+          <%= entry[8] %>
+        </td>
+        <td>
+          <%= entry[9] %>
+        </td>
+        <td>
+          <%= entry[10] %>
+        </td>
+        <td>
+          <%= @j1[0] %>
+        </td>
+        <td>
+          <%= @j2[0] %>
+        </td>
+        <td>
+          <%= @j3[0] %>
+        </td>
+        <td>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</body>
+</html>

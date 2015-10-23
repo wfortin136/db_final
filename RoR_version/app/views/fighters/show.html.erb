@@ -1,0 +1,31 @@
+<div class="fighter">
+  <h1><%= @fighter.name%>  </h1>
+  <% if session[:user_id] %>
+    <h4><%= link_to "[Edit]", "/fighters/#{@fighter.id}/edit" %> </h4>
+  <% else %>
+    <h4><a href="/sessions/new">Sign In</a>/<a href="users/new">Sign Up</a> to Edit</h4>
+  <% end %>
+<table>
+  <tbody>
+    <tr> 
+      <%= image_tag(@fighter.picture, height:'400')%>
+    </tr>
+    <tr> 
+      <th scope="row" width="40%"> Wins </th>
+      <td>  <%= @fighter.wins%></td>
+    </tr>
+    <tr> 
+      <th scope="row" width="40%"> Losses </th>
+      <td>  <%= @fighter.losses%></td>
+    </tr>
+    <tr> 
+      <th scope="row" width="40%"> Draws </th>
+      <td>  <%= @fighter.draws%></td>
+    </tr>
+    <tr> 
+      <th scope="row" width="40%"> No Contests </th>
+      <td>  <%= @fighter.nc%></td>
+    </tr>
+  </tbody>
+</div>
+

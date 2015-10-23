@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>DB Final: Fightcard Details</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" />
+</head>
+<body>
+  <% require 'mysql' %>
+  <% require 'cgi' %>
+  <% require 'addressable/uri' %>
+  <%# my = Mysql.new(hostname, username, password, databasename)%> 
+  <% con = Mysql.new('localhost', 'mma_site', 'mpcs53001', 'mma')%>
+  <% @uri = Addressable::URI.parse(ENV['REQUEST_URI'])%>
+  <% @fcid = @uri.query_values["fcid"]%>
+  <% @query = "select F.fight_id, A.fighter_id, F1.fighterName, B.fighter_id, F2.fighterName, C.className
+          from fights F
+          inner join fightcards as J
+          on F.fightcard_id = J.fightcard_id
+          inner join fightstats as A
+          on F.fight_id = A.fight_id
+          inner join fightstats as B
+          on B.fight_id = A.fight_id
+          inner join fighters as F1
+          on F1.fighter_id = A.fighter_id
+          inner join fighters as F2
+          on F2.fighter_id = B.fighter_id
+          inner join weightclasses as C
+          on F.weightclass_id = C.weightclass_id
+          where (A.fighter_id > B.fighter_id) AND (#{@fcid}=J.fightcard_id)
+          group by F.fight_id, A.fighter_id, B.fighter_id;" %>
+  <% @fc_fights = con.query(@query)%>
+
+  <% @query = "select P.name, FC.fightcardName, L.city, L.state, L.country, FC.fightDate 
+          from fightcards FC 
+          inner join promotions as P on P.promotion_id = FC.promotion_id
+          inner join locations as L on L.location_id = FC.location_id
+          where FC.fightcard_id = #{@fcid}"%>
+  <% @fc_details = con.query(@query)%>
+
+  <% con.close%>
+  <% x = @fc_details.fetch_row %>
+
+  <h1> <%= x[1] %> </h1>
+  <h4> <%= x[0] %> </h4>
+  <h4> <%= "#{x[2]}, " %>
+    <% if not x[3] == 'NULL' %>
+      <%= "#{x[3]}, "%>
+    <% end%>
+  <%= x[4] %> </h4>
+  <h4> <%= x[5] %> </h4>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="35%" colspan="3">Fight</th>
+        <th width="15%">Weightclass</th>
+        <th width="45%"></th>
+      </tr>
+    <tbody>
+  <% @fc_fights.each do|entry|%>  
+  <%# puts entry%>
+        <tr>
+          <td>
+          <a class="btn btn-xs btn-primary pull-left" href="fightdetails.html.erb?fight_id=<%=entry[0]%>">Select</a>
+            <%# entry[0] %>
+          </td>
+          <td>
+            <%# Fighter%>
+            <a href="fighterdetails.html.erb?fid=<%=entry[1]%>"><%= entry[2] %></a>
+          </td>
+          <td> vs.
+          </td>
+          <td>
+            <%# fighter%>
+            <a href="fighterdetails.html.erb?fid=<%=entry[3]%>"><%= entry[4] %></a>
+          </td>
+          <td>
+            <%= entry[5] %>
+          </td>
+          <td>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</body>
+</html>

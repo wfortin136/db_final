@@ -1,0 +1,114 @@
+<div class="scorecard">
+  <h1><%= @scorecard.fighter_1.name%> vs. <%= @scorecard.fighter_2.name%>  </h1>
+  <% if session[:user_id] %>
+    <h4><%= link_to "[Edit]", "/scorecards/#{@scorecard.id}/edit" %> </h4>
+  <% else %>
+    <h4><a href="/sessions/new">Sign In</a>/<a href="users/new">Sign Up</a> to Edit</h4>
+  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th colspan="6"> <h3> Scorecard </h3></th>
+      </tr>
+      <tr>
+        <th width="10%"> Round </th>
+        <th width="30%" colspan="2"> 
+            <%=if @scorecard.judge_1 
+                @scorecard.judge_1.name 
+            end%>
+        </th>
+        <th width="30%" colspan="2"> 
+            <%=if @scorecard.judge_2 
+                @scorecard.judge_2.name 
+            end%>
+        </th>
+        <th width="30%" colspan="2"> 
+            <%=if @scorecard.judge_3 
+                @scorecard.judge_3.name 
+            end%>
+        </th>
+      </tr>
+      <tr>
+        <th> </th>
+        <th> A </th>
+        <th> B </th>
+        <th> A </th>
+        <th> B </th>
+        <th> A </th>
+        <th> B </th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row"> 1 </th>
+        <td><%= @scorecard.score_1.r1_1%></td>
+        <td><%= @scorecard.score_1.r1_2%></td>
+        <td><%= @scorecard.score_2.r1_1%></td>
+        <td><%= @scorecard.score_2.r1_2%></td>
+        <td><%= @scorecard.score_3.r1_1%></td>
+        <td><%= @scorecard.score_3.r1_2%></td>
+    </tr>
+    <tr>
+      <th scope="row"> 2 </th>
+        <td><%= @scorecard.score_1.r2_1%></td>
+        <td><%= @scorecard.score_1.r2_2%></td>
+        <td><%= @scorecard.score_2.r2_1%></td>
+        <td><%= @scorecard.score_2.r2_2%></td>
+        <td><%= @scorecard.score_3.r2_1%></td>
+        <td><%= @scorecard.score_3.r2_2%></td>
+    </tr>
+    <tr>
+      <th scope="row"> 3 </th>
+        <td><%= @scorecard.score_1.r3_1%></td>
+        <td><%= @scorecard.score_1.r3_2%></td>
+        <td><%= @scorecard.score_2.r3_1%></td>
+        <td><%= @scorecard.score_2.r3_2%></td>
+        <td><%= @scorecard.score_3.r3_1%></td>
+        <td><%= @scorecard.score_3.r3_2%></td>
+    </tr>
+    <tr>
+      <th scope="row"> 4 </th>
+        <td><%= @scorecard.score_1.r4_1%></td>
+        <td><%= @scorecard.score_1.r4_2%></td>
+        <td><%= @scorecard.score_2.r4_1%></td>
+        <td><%= @scorecard.score_2.r4_2%></td>
+        <td><%= @scorecard.score_3.r4_1%></td>
+        <td><%= @scorecard.score_3.r4_2%></td>
+    </tr>
+    <tr>
+      <th scope="row"> 5 </th>
+        <td><%= @scorecard.score_1.r5_1%></td>
+        <td><%= @scorecard.score_1.r5_2%></td>
+        <td><%= @scorecard.score_2.r5_1%></td>
+        <td><%= @scorecard.score_2.r5_2%></td>
+        <td><%= @scorecard.score_3.r5_1%></td>
+        <td><%= @scorecard.score_3.r5_2%></td>
+    </tr>
+    <tr>
+      <th scope="row"> Total </th>
+        <td><%= @scorecard.score_1.t1%></td>
+        <td><%= @scorecard.score_1.t2%></td>
+        <td><%= @scorecard.score_2.t1%></td>
+        <td><%= @scorecard.score_2.t2%></td>
+        <td><%= @scorecard.score_3.t1%></td>
+        <td><%= @scorecard.score_3.t2%></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3>Image of Original Scorecard </h3>
+
+  
+  <% if @scorecard.pic %>
+    <% if session[:user_id] %>
+      <h4><%= link_to "[Edit Image]", "/scorecards/#{@scorecard.id}/edit" %> </h4>
+    <% end%>  
+    <%= image_tag("/assets/#{@scorecard.pic}", height:'400')%>
+  <% else %>
+    <% if session[:user_id] %>
+      <h4><%= link_to "[Add Image]", "/scorecards/#{@scorecard.id}/edit" %> </h4>
+    <% end%>  
+  <% end %>
+</div>
+

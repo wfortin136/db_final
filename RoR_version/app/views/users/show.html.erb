@@ -1,0 +1,14 @@
+<div class="page-header">
+  <%= link_to "Edit", edit_user_path(@user.id), class: 'btn btn-md btn-primary pull-right' %>
+  <h1>My Account</h1>
+</div>
+
+
+<p>
+  <strong>Name:</strong> <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email address on file:</strong> <%= @user.email %>
+</p>
+

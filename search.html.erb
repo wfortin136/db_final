@@ -1,0 +1,209 @@
+<html>
+<head>
+  <title>DB Final: Search Results</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" />
+</head>
+<body>
+  <% require 'mysql' %>
+  <% require 'cgi' %>
+  <% require 'addressable/uri' %>
+  <%# my = Mysql.new(hostname, username, password, databasename)%> 
+  <% con = Mysql.new('localhost', 'mma_site', 'mpcs53001', 'mma')%>
+  <% @uri = Addressable::URI.parse(ENV['REQUEST_URI'])%>
+  <% @term = @uri.query_values["search"]%>
+
+  <% @query = "select FC.fightcard_id, P.name, FC.fightcardName, L.city, L.state, L.country, FC.fightDate 
+          from fightcards FC 
+          inner join promotions as P on P.promotion_id = FC.promotion_id
+          inner join locations as L on L.location_id = FC.location_id
+          where FC.fightcardName like \'%#{@term}%\' or
+          L.city like \'%#{@term}%\' or
+          L.state like \'%#{@term}%\' or
+          L.country like \'%#{@term}%\'
+  " %>
+  <% @fc = con.query(@query)%>
+
+  <h2> Fightcards </h2>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="7%">Promotion</th>
+        <th width="30%">Fightcard Name</th>
+        <th width="20%">Location</th>
+        <th width="13%">Date</th>
+        <th width="25%"></th>
+      </tr>
+    <tbody>
+      <%if @fc.num_rows<1 %>
+        <tr>
+          <td colspan="6">
+            <%= "No Fighter Results"%>
+          </td>
+        </tr>
+      <%end %>
+      <% @fc.each do|fightcard|%>  
+      <%# puts fightcard%>
+      <tr>
+        <td>
+          <%# fighter[0] %>
+        </td>
+        <td>
+          <%# Promotion%>
+          <%= fightcard[1] %>
+        </td>
+        <td>
+          <%# Fightcard%>
+          <a href="fightcarddetails.html.erb?fcid=<%=fightcard[0]%>"><%= fightcard[2] %></a>
+        </td>
+        <td>
+          <%# Location%>
+          <%= "#{fightcard[3]}, "%>
+          <% if not fightcard[4] == 'NULL' %>
+            <%= "#{fightcard[4]}, "%>
+          <% end%>
+          <%= "#{fightcard[5]}" %>
+        </td>
+        <td>
+          <%# Date%>
+          <%= fightcard[6] %>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+  <% @fighters = con.query('select * from fighters')%>
+  <% @query = "select * from fighters where fighterName like \'%#{@term}%\'"%>
+  <% @f = con.query(@query)%>
+  <h2> Fighters </h2>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="23%">Fighter</th>
+        <th width="7%">Wins</th>
+        <th width="7%">Losses</th>
+        <th width="7%">Draws</th>
+        <th width="7%">No Contests</th>
+        <th width="44%"></th>
+      </tr>
+    <tbody>
+      <%if @f.num_rows<1 %>
+        <tr>
+          <td colspan="7">
+            <%= "No Fighter Results"%>
+          </td>
+        </tr>
+      <%end %>
+      <% @f.each do|fighter|%>  
+      <%# puts fighter%>
+      <tr>
+        <td>
+          <% fighter[0] %>
+        </td>
+        <td>
+          <%# Fighter%>
+          <a href="fighterdetails.html.erb?fid=<%=fighter[0]%>"><%= fighter[1] %></a>
+        </td>
+        <td>
+          <%# Wins%>
+          <%= fighter[2] %>
+        </td>
+        <td>
+          <%# Losses%>
+          <%= fighter[3] %>
+        </td>
+        <td>
+          <%# Draws%>
+          <%= fighter[4] %>
+        </td>
+        <td>
+          <%# No Contests%>
+          <%= fighter[5] %>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <% @query = "select judges.judgeName, ONE.num_fights, TWO.avg_dev
+  from (
+    select judge_id, count(*) num_fights
+    from( 
+      select judge_id, fight_id from judgescores
+      group by judge_id, fight_id) A
+    group by judge_id) ONE
+  inner join (
+    select A.j_id j_id, avg(A.dev) avg_dev
+    from (
+    select JS.judge_id j_id, JS.fighter_id f_id, JS.round round, abs(JS.score - A.avg_score) dev
+        from judgescores JS
+          inner join (
+            select J.fight_id, J.fighter_id, J.round, avg(score) as avg_score
+            from judgescores J
+            inner join fighters F on F.fighter_id = J.fighter_id
+            group by J.fight_id, J.fighter_id, J.round) A
+          on A.fight_id = JS.fight_id and A.fighter_id = JS.fighter_id and 
+          A.round = JS.round) A
+    group by A.j_id) TWO
+  on ONE.judge_id = TWO.j_id
+  inner join judges on judges.judge_id = ONE.judge_id
+  where judges.judgeName like \'%#{@term}%\'
+  order by TWO.avg_dev"%>
+  
+  <%# @query = "select * from judges where judgeName like \'%#{@term}%\'"%>
+  <% @judges = con.query(@query)%>
+  <% @f = con.query(@query)%>
+  <h1> Judges </h1>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="20%">Judge</th>
+        <th width="10%">Number of Fights</th>
+        <th width="20%">Average Score Deviation</th>
+        <th width="44%"></th>
+      </tr>
+    <tbody>
+      <%if @judges.num_rows<1 %>
+        <tr>
+          <td colspan="5">
+            <%= "No Judge Results"%>
+          </td>
+        </tr>
+      <%end %>
+      <% @judges.each do|judge|%>  
+      <%# puts fighter%>
+      <tr>
+        <td>
+          <%# fighter[0] %>
+        </td>
+        <td>
+          <%# Fighter%>
+          <%= judge[0] %>
+        </td>
+        <td>
+          <%# Wins%>
+          <%= judge[1] %>
+        </td>
+        <td>
+          <%# Losses%>
+          <%= judge[2] %>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <% con.close%>
+</body>
+</html>

@@ -1,0 +1,67 @@
+User
+  name: string
+  email: string
+  admin: boolean(false)
+  password_digest: string
+
+Location
+  city: string
+  state: string
+  country: string
+
+Promotion
+  name: string
+
+Weightclass
+  className: string
+  weight: integer
+
+Fightcard
+  promotion_id: string
+  fightcardName: string
+  locID: integer
+  date: date
+
+Fighter
+  fighterName: string
+  wins: integer
+  losses: integer
+  draws: integer
+  nc: integer
+
+Champhist
+  promotion_id: integer
+  weightclass_id: integer
+  fighter_id: integer
+  start: date
+  end: date
+
+Fight
+  fightcard_id: integer
+  fightNum: integer
+  weightclass_id: integer
+  cardLevel: integer
+  championship: integer
+  fightTime: integer
+  method: string
+
+Fightstats
+  fight_id: integer
+  fighter_id: integer
+  round: integer
+  kd: integer
+  str_landed: integer
+  str_thrown: integer
+  td_att: integer
+  td_com: integer
+  sub_att: integer
+
+Judge
+  judgeName: string
+
+Judgescore
+  judge_id: integer
+  fight_id: integer
+  fighter_id: integer
+  round: integer
+  score: integer

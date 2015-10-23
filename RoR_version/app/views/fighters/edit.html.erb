@@ -1,0 +1,36 @@
+<h1> Edit Fighter </h1>
+
+<%= form_tag "/fighters/#{@fighter.id}", :method => "patch" do%>
+  <div>
+    <label> Name </label>
+    <input type="text" name="name" value="<%= @fighter.name%>">
+    </select>
+  </div>
+
+  <div>
+    <label> Wins</label>
+    <input type="number" name="wins" value="<%= @fighter.wins%>">
+  </div>
+  
+  <div>
+    <label> Losses</label>
+    <input type="number" name="losses" value="<%= @fighter.losses%>">
+  </div>
+  
+  <div>
+    <label> Draws</label>
+    <input type="number" name="draws" value="<%= @fighter.draws%>">
+  </div>
+  
+  <div>
+    <label> No Contests</label>
+    <input type="number" name="nc" value="<%= @fighter.nc%>">
+  </div>
+  
+  <div>
+    <label> Picture</label>
+    <input type="text" name="picture" value="<%= @fighter.picture%>">
+  </div>
+  
+  <input type="submit" value="Update Fighter">
+<% end %>

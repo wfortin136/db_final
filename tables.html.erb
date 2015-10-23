@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>DB Final: Tables</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" />
+</head>
+<body>
+  <% require 'mysql' %>
+  <%# my = Mysql.new(hostname, username, password, databasename,Mysql2::Client::MULTI_STATEMENTS )%> 
+  <%# con = Mysql2::Client.new(:host => 'localhost', :database => 'mma', :username => "mma_site", :password => "mpcs53001", :flags => Mysql2::Client::MULTI_STATEMENTS)%>
+  <% con = Mysql.new('localhost', 'mma_site', 'mpcs53001', 'mma')%>
+  <% @query = "SET SESSION group_concat_max_len = 1000000;"%>
+  <% con.query(@query)%>
+  <% @query = "
+  select
+    concat('select * from(', 
+      group_concat(
+        concat(
+        'select ', quote(tablename), ' _TABLENAME_, ' 'count(1) \"_ROWCOUNT_\" ' ,
+        'from ', db, '.', tablename)
+      separator ' union ')
+    , ') t order by 2 desc')
+  from (
+  select table_schema db, table_name tablename
+  from information_schema.tables 
+  where table_schema ='mma') t;"%>
+  <% @x = con.query(@query)%>
+  <% @query = @x.fetch_row[0].to_s %>
+  <% @tables = con.query(@query)%>
+
+  <%  con.close%>
+  <h1> Tables </h1>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="20%">Table</th>
+        <th width="5%">Rows</th>
+        <th width="70%"></th>
+      </tr>
+    <tbody>
+  <% @tables.each do|table|%>  
+  <%# puts table%>
+        <tr>
+          <td>
+            <%# fighter[0] %>
+          </td>
+          <td>
+            <%# Table%>
+            <%= table[0] %>
+          </td>
+          <td>
+            <%# Rows%>
+            <%= table[1] %>
+          </td>
+          <td>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</body>
+</html>

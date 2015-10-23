@@ -1,0 +1,209 @@
+<h1> Enter a New Scorecard </h1>
+
+<%= form_tag "/scorecards" do%>
+
+  <div>
+    <label> Fight </label>
+    <select id="fight_selector" name="fight_id" >
+      <% Fight.all.each do |f| %>
+        <option value="<%= f.id %>"><%=f.fighter_1.name %> vs. <%= f.fighter_2.name%> </option>
+      <% end %>
+    </select>
+  </div>
+
+  <div>
+    <label class="fa">Fighter A: <span onload="update_f()" class="name"></label>
+    <br>
+    <label class="fb">Fighter B: <span class="name"></label>
+  </div>
+  
+  <script> 
+  function update_f(){
+    var e = document.getElementById("fight_selector");
+    var strf = fight_selector.options[fight_selector.selectedIndex].text;
+    var strl = strf.length;
+    var n = strf.indexOf("vs"); 
+    document.querySelector('.fa .name').innerHTML = strf.substr(0,n-1);
+    document.querySelector('.fb .name').innerHTML = strf.substr(n+3,strl);
+  }
+  var select = document.getElementById('fight_selector');
+  select.onchange = update_f;
+  window.onload = update_f();
+  </script>
+
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th colspan="6"> Scorecard </th>
+      </tr>
+      <tr>
+        <th width="10%"></th>
+        <th width="30%" colspan="2"> 
+        <select name="judge_1" >
+          <% Judge.all.each do |j| %>
+            <option value="<%= j.id %>"><%=j.name%> </option>
+          <% end %>
+        </select>
+        </th>
+        <th width="30%" colspan="2"> 
+        <select name="judge_2" >
+          <% Judge.all.each do |j| %>
+            <option value="<%= j.id %>"><%=j.name%> </option>
+          <% end %>
+        </select>
+        </th>
+        <th width="30%" colspan="2"> 
+        <select name="judge_3" >
+          <% Judge.all.each do |j| %>
+            <option value="<%= j.id %>"><%=j.name%> </option>
+          <% end %>
+        </select>
+        </th>
+      </tr>
+      <tr>
+        <th> Round </th>
+        <th> A </th>
+        <th> B </th>
+        <th> A </th>
+        <th> B </th>
+        <th> A </th>
+        <th> B </th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row"> 1 </th>
+      <td>
+        <input type="number" name="j1_r1_1">
+      </td>  
+      <td>
+        <input type="number" name="j1_r1_2">
+      </td>  
+      <td>
+        <input type="number" name="j2_r1_1">
+      </td>  
+      <td>
+        <input type="number" name="j2_r1_2">
+      </td>  
+      <td>
+        <input type="number" name="j3_r1_1">
+      </td>  
+      <td>
+        <input type="number" name="j3_r1_2">
+      </td>  
+    </tr>
+    <tr>
+      <th scope="row"> 2 </th>
+      <td>
+        <input type="number" name="j1_r2_1">
+      </td>  
+      <td>
+        <input type="number" name="j1_r2_2">
+      </td>  
+      <td>
+        <input type="number" name="j2_r2_1">
+      </td>  
+      <td>
+        <input type="number" name="j2_r2_2">
+      </td>  
+      <td>
+        <input type="number" name="j3_r2_1">
+      </td>  
+      <td>
+        <input type="number" name="j3_r2_2">
+      </td>  
+    </tr>
+    <tr>
+      <th scope="row"> 3 </th>
+      <td>
+        <input type="number" name="j1_r3_1">
+      </td>  
+      <td>
+        <input type="number" name="j1_r3_2">
+      </td>  
+      <td>
+        <input type="number" name="j2_r3_1">
+      </td>  
+      <td>
+        <input type="number" name="j2_r3_2">
+      </td>  
+      <td>
+        <input type="number" name="j3_r3_1">
+      </td>  
+      <td>
+        <input type="number" name="j3_r3_2">
+      </td>  
+    </tr>
+    <tr>
+      <th scope="row"> 4 </th>
+      <td>
+        <input type="number" name="j1_r4_1">
+      </td>  
+      <td>
+        <input type="number" name="j1_r4_2">
+      </td>  
+      <td>
+        <input type="number" name="j2_r4_1">
+      </td>  
+      <td>
+        <input type="number" name="j2_r4_2">
+      </td>  
+      <td>
+        <input type="number" name="j3_r4_1">
+      </td>  
+      <td>
+        <input type="number" name="j3_r4_2">
+      </td>  
+    </tr>
+    <tr>
+      <th scope="row"> 5 </th>
+      <td>
+        <input type="number" name="j1_r5_1">
+      </td>  
+      <td>
+        <input type="number" name="j1_r5_2">
+      </td>  
+      <td>
+        <input type="number" name="j2_r5_1">
+      </td>  
+      <td>
+        <input type="number" name="j2_r5_2">
+      </td>  
+      <td>
+        <input type="number" name="j3_r5_1">
+      </td>  
+      <td>
+        <input type="number" name="j3_r5_2">
+      </td>  
+    </tr>
+    <tr>
+      <th scope="row"> Total </th>
+      <td>
+        <input type="number" name="j1_t1">
+      </td>  
+      <td>
+        <input type="number" name="j1_t2">
+      </td>  
+      <td>
+        <input type="number" name="j2_t1">
+      </td>  
+      <td>
+        <input type="number" name="j2_t2">
+      </td>  
+      <td>
+        <input type="number" name="j3_t1">
+      </td>  
+      <td>
+        <input type="number" name="j3_t2">
+      </td>  
+    </tr>
+    </tbody>
+  </table>
+  <br> 
+  <div>
+    <label> URL Picture of Fight</label>
+    <input type="text" name="url" value="<%= @scorecard.pic%>">
+  </div>
+  
+  <input type="submit" value="Create Scorecard">
+<% end %>

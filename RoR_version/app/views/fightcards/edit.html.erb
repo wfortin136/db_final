@@ -1,0 +1,34 @@
+<h1> Edit Fightcard </h1>
+
+<%= form_tag "/fightcards/#{@fightcard.id}", :method => "patch" do%>
+  <div>
+    <label> Fightcard </label>
+    <input type="text" name="name" value="<%= @fightcard.name %>">
+  </div>
+
+  <div>
+    <label> Promotion </label>
+    <input type="text" name="promotion" value="<%= @fightcard.promotion %>">
+  </div>
+
+  <div>
+    <label> Location </label>
+    <div>
+      <label> City </label>
+      <input type="text" name="city" value= "<%= @fightcard.city %>">
+      <label> State </label>
+      <input type="text" name="state" value= "<%= @fightcard.state %>">
+      <label> Country</label>
+      <input type="text" name="country" value= "<%= @fightcard.country %>">
+    </div>
+  </div>
+  
+  <div>
+    <label> Date </label>
+    <div>
+      <%=date_field(:fc, :date, value: @fightcard.date) %>
+    </div>
+  </div>
+
+  <input type="submit" value="Edit Fightcard">
+<% end %>

@@ -1,0 +1,67 @@
+<h1> Scorecards </h1>
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th width="4%"></th>
+      <th width="23%">Fight</th>
+      <th width="7%">Event</th>
+      <th width="7%">Date</th>
+      <th width="10%">Winner</th>
+      <th width="18%">Judges</th>
+      <th width="10%">Score Deviation</th>
+      <th width="4%"></th>
+    </tr>
+  <tbody>
+    <% @scorecards.each do |scorecard|%>
+      <% fight = scorecard.fight%>
+      <%puts fight%>
+      <tr>
+        <td>
+          <a class="btn btn-xs btn-primary pull-left" href="/scorecards/<%=scorecard.id%>">Select</a>
+        </td>
+        <td>
+          <%# Fight%>
+          <%= link_to scorecard.fighter_1.name, "/fighters/#{scorecard.fighter_1.id}"%> vs. <%= link_to scorecard.fighter_2.name, "/fighters/#{scorecard.fighter_2.id}"%>
+        </td>
+        <td>
+          <%# Event%>
+          <%if fight.fightcard %>
+            <%= link_to fight.fightcard.name, "/fightcards/#{fight.fightcard.id}"%>
+          <%end %>
+        </td>
+        <td>
+          <%# Date%>
+          <%if fight.fightcard %>
+            <%= fight.fightcard.date %>
+          <%end %>
+        </td>
+        <td>
+          <%# Winner%>
+          <%= fight.fighter_1.name%>
+        </td>
+        <td>
+          <%# Judges %>
+          <%if scorecard.judge_1 %>
+            <%= link_to scorecard.judge_1.name, "/judges/#{scorecard.judge_1.id}"%>, 
+          <%end%>
+          <%if scorecard.judge_2%>
+            <%= link_to scorecard.judge_2.name, "/judges/#{scorecard.judge_2.id}"%>, 
+          <%end %>
+          <%if scorecard.judge_3%>
+            <%= link_to scorecard.judge_3.name, "/judges/#{scorecard.judge_3.id}"%>
+          <%end%>
+        </td>
+        <td>
+          <%# Score Deviation%>
+          <%= %>
+        </td>
+        <td>
+          <% if session[:user_id] %>
+            <a class="btn btn-xs btn-success pull-left" data-method="delete" href="/scorecards/<%=scorecard.id%>">Clear</a>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,153 @@
+<html>
+<head>
+  <title>DB Final: Fighter Details</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" />
+</head>
+<body>
+  <% require 'mysql' %>
+  <% require 'cgi' %>
+  <% require 'addressable/uri' %>
+  <%# my = Mysql.new(hostname, username, password, databasename)%> 
+  <% con = Mysql.new('localhost', 'mma_site', 'mpcs53001', 'mma')%>
+  <% @uri = Addressable::URI.parse(ENV['REQUEST_URI'])%>
+  <% @fid = @uri.query_values["fid"]%>
+  
+  <% @query = "select * from fighters where #{@fid}=fighter_id"%>
+  <% @f = con.query(@query)%>
+  <% y = @f.fetch_row %>
+
+  <% @query = "select A.*, B.avg_score
+    from (select * from fighterstats where #{@fid}=fighter_id) A
+    inner join (
+      select J.fighter_id ID, round, avg(score) avg_score
+          from judgescores J
+          inner join fights FI on J.fight_id = FI.fight_id
+          inner join fightcards FC on FC.fightcard_id = FI.fightcard_id
+          where J.fighter_id = #{@fid}
+          group by J.fighter_id, round) B
+    on A.fighter_id = B.ID and A.round =B.round"%>
+  
+ <% @f_stats = con.query(@query)%>
+  
+ <% @query = "select A.*, B.avg_score
+      from (
+        select fighter_id, sum(tot_kd), sum(tot_str_landed), 
+            sum(tot_str_thrown), sum(tot_td_att), 
+            sum(tot_td_com), sum(tot_sub_att) 
+            from fighterstats where #{@fid}=fighter_id 
+            group by fighter_id) A
+      inner join (
+        select J.fighter_id ID, avg(score) avg_score
+            from judgescores J
+            inner join fights FI on J.fight_id = FI.fight_id
+            inner join fightcards FC on FC.fightcard_id = FI.fightcard_id
+            where J.fighter_id = #{@fid}
+            group by J.fighter_id) B
+      on A.fighter_id = B.ID"%>
+ 
+  <% @f_totals = con.query(@query)%>
+
+  <% con.close%>
+  <% x = @f_totals.fetch_row %>
+
+  <h1> <%= y[1] %> </h1>
+  <h4> <%= "#{y[2]}-#{y[3]}-#{y[4]}-#{y[5]}" %> </h4>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="10%">Round</th>
+        <th width="10%">Knockdowns</th>
+        <th width="10%">Strikes Landed</th>
+        <th width="10%">Strikes Thrown</th>
+        <th width="10%">Takedowns Attempted</th>
+        <th width="10%">Takedowns Completed</th>
+        <th width="15%">Submissions Attempted</th>
+        <th width="10%">Average Score</th>
+        <th width="10%"></th>
+      </tr>
+    <tbody>
+    <% @f_stats.each do|entry|%>  
+    <%# puts entry%>
+      <tr>
+        <td>
+          <%# entry[0] %>
+        </td>
+        <td>
+          <%# Fighter%>
+          <%= entry[1] %>
+        </td>
+        <td>
+          <%# Fighter%>
+          <%= entry[2] %>
+        </td>
+        <td>
+          <%# Fighter%>
+          <%= entry[3] %>
+        </td>
+        <td>
+          <%# fighter%>
+          <%= entry[4] %>
+        </td>
+        <td>
+          <%= entry[5] %>
+        </td>
+        <td>
+          <%= entry[6] %>
+        </td>
+        <td>
+          <%= entry[7] %>
+        </td>
+        <td>
+          <%= entry[8] %>
+        </td>
+        <td>
+          <%= entry[9] %>
+        </td>
+        <td>
+        </td>
+      </tr>
+    <% end %>
+      <tr style="font-weight:bold">
+        <td>
+          <%# entry[0] %>
+        </td>
+        <td>
+          <%# Fighter%>
+          Total
+        </td>
+        <td>
+          <%# Fighter%>
+          <%= x[1] %>
+        </td>
+        <td>
+          <%# Fighter%>
+          <%= x[2] %>
+        </td>
+        <td>
+          <%# fighter%>
+          <%= x[3] %>
+        </td>
+        <td>
+          <%= x[4] %>
+        </td>
+        <td>
+          <%= x[5] %>
+        </td>
+        <td>
+          <%= x[6] %>
+        </td>
+        <td>
+          <%= x[7] %>
+        </td>
+        <td>
+          <%= x[8] %>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

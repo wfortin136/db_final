@@ -1,0 +1,113 @@
+::São Paulo::NULL:: Brazil
+::Dublin::NULL:: Ireland
+::Houston:: Texas:: U.S.
+::Saitama::NULL:: Japan
+::Las Vegas:: Nevada:: U.S.
+::Saskatoon:: Saskatchewan:: Canada
+::Nashville:: Tennessee:: U.S.
+::Rio de Janeiro::NULL:: Brazil
+::Chicago:: Illinois:: U.S.
+::Glasgow:: Scotland:: U.K.
+::San Diego:: California:: U.S.
+::Hollywood:: Florida:: U.S.
+::Berlin::NULL:: Germany
+::Mexico City::NULL:: Mexico
+::New Orleans:: Louisiana:: U.S.
+::Goiânia::NULL:: Brazil
+::Pasay::NULL:: Philippines
+::Adelaide::NULL:: Australia
+::Montreal:: Quebec:: Canada
+::Newark:: New Jersey:: U.S.
+::Kraków::NULL:: Poland
+::Fairfax:: Virginia:: U.S.
+::Dallas:: Texas:: U.S.
+::Los Angeles:: California:: U.S.
+::Porto Alegre::NULL:: Brazil
+::Broomfield:: Colorado:: U.S.
+::Stockholm::NULL:: Sweden
+::Boston:: Massachusetts:: U.S.
+::Barueri::NULL:: Brazil
+::Phoenix:: Arizona:: U.S.
+::Austin:: Texas:: U.S.
+::Uberlândia::NULL:: Brazil
+::Sydney::NULL:: Australia
+::Halifax:: Nova Scotia:: Canada
+::Brasília::NULL:: Brazil
+::Mashantucket:: Connecticut:: U.S.
+::Sacramento:: California:: U.S.
+::Tulsa:: Oklahoma:: U.S.
+::Macau:: SAR:: China
+::Bangor:: Maine:: U.S.
+::San Jose:: California:: U.S.
+::Atlantic City:: New Jersey:: U.S.
+::San Antonio:: Texas:: U.S.
+::Auckland::NULL:: New Zealand
+::Vancouver:: British Columbia:: Canada
+::Albuquerque:: New Mexico:: U.S.
+::Cincinnati:: Ohio:: U.S.
+::Baltimore:: Maryland:: U.S.
+::Orlando:: Florida:: U.S.
+::Quebec City:: Quebec:: Canada
+::Abu Dhabi::NULL:: United Arab Emirates
+::Natal::NULL:: Brazil
+::London:: England:: U.K.
+::Jaraguá do Sul::NULL:: Brazil
+::Duluth:: Georgia:: U.S.
+::Marina Bay::NULL:: Singapore
+::Brisbane::NULL:: Australia
+::Fort Campbell:: Kentucky:: U.S.
+::Manchester:: England:: U.K.
+::Toronto:: Ontario:: Canada
+::Belo Horizonte::NULL:: Brazil
+::Milwaukee:: Wisconsin:: U.S.
+::Indianapolis:: Indiana:: U.S.
+::Seattle:: Washington:: U.S.
+::Winnipeg:: Manitoba:: Canada
+::Fortaleza::NULL:: Brazil
+::Anaheim:: California:: U.S.
+::Gold Coast::NULL:: Australia
+::Minneapolis:: Minnesota:: U.S.
+::Nottingham:: England:: U.K.
+::Denver:: Colorado:: U.S.
+::Calgary:: Alberta:: Canada
+::Sunrise:: Florida:: U.S.
+::East Rutherford:: New Jersey:: U.S.
+::Atlanta:: Georgia:: U.S.
+::Omaha:: Nebraska:: U.S.
+::Birmingham:: England:: U.K.
+::Washington:: D.C.:: U.S.
+::Philadelphia:: Pennsylvania:: U.S.
+::Pittsburgh:: Pennsylvania:: U.S.
+::Louisville:: Kentucky:: U.S.
+::Fort Hood:: Texas:: U.S.
+::Auburn Hills:: Michigan:: U.S.
+::Oberhausen::NULL:: Germany
+::Oakland:: California:: U.S.
+::Charlotte:: North Carolina:: U.S.
+::Memphis:: Tennessee:: U.S.
+::Oklahoma City:: Oklahoma:: U.S.
+::Portland:: Oregon:: U.S.
+::Cologne::NULL:: Germany
+::Columbus:: Ohio:: U.S.
+::Tampa:: Florida:: U.S.
+::Fayetteville:: North Carolina:: U.S.
+::Rosemont:: Illinois:: U.S.
+::Newcastle upon Tyne:: England:: U.K.
+::Belfast:: Northern Ireland:: U.K.
+::Uncasville:: Connecticut:: U.S.
+::Miami:: Florida:: U.S.
+::Bossier City:: Louisiana:: U.S.
+::Tokyo::NULL:: Japan
+::Cedar Rapids:: Iowa:: U.S.
+::Lake Charles:: Louisiana:: U.S.
+::Chiba::NULL:: Japan
+::Birmingham:: Alabama:: U.S.
+::Bay St. Louis:: Mississippi:: U.S.
+::Mobile:: Alabama:: U.S.
+::Yokohama::NULL:: Japan
+::Augusta:: Georgia:: U.S.
+::Dothan:: Alabama:: U.S.
+::Detroit:: Michigan:: U.S.
+::Bayamón::NULL:: Puerto Rico
+::Buffalo:: New York:: U.S.
+::Casper:: Wyoming:: U.S.

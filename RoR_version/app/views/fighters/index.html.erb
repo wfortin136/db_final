@@ -1,0 +1,54 @@
+<h1> Fighters </h1>
+  <% if @user %>
+    <h4> <%= link_to "[New Fighter]", "/fighters/new"%> </h4>
+  <% else %>
+    <h4><a href="/sessions/new">Sign In</a>/<a href="users/new">Sign Up</a> to Add a Fighter</h4>
+  <% end %>
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th width="5%"></th>
+      <th width="23%">Fighter</th>
+      <th width="7%">Wins</th>
+      <th width="7%">Losses</th>
+      <th width="7%">Draws</th>
+      <th width="7%">No Contests</th>
+      <th width="5%"></th>
+    </tr>
+  <tbody>
+    <% @fighters.each do |fighter|%>
+      <% puts fighter %>
+      <tr>
+        <td>
+          <a class="btn btn-xs btn-primary pull-left" href="/fighters/<%=Fighter.fighter_id(fighter)%>">Select</a>
+        </td>
+        <td>
+          <%# Fighter%>
+          <%= link_to Fighter.fname(fighter), "/fighters/#{Fighter.fighter_id(fighter)}"%>
+        </td>
+        <td>
+          <%# Wins%>
+          <%= fighter[2] %>
+        </td>
+        <td>
+          <%# Losses%>
+          <%= fighter[3]%>
+        </td>
+        <td>
+          <%# Draws%>
+          <%= fighter[4]%>
+        </td>
+        <td>
+          <%# No Contests%>
+          <%= fighter[5]%>
+        </td>
+        <td>
+          <% if @useradmin %>
+            <!--<a class="btn btn-xs btn-success pull-left" data-method="delete" href="/fighters/<%#=fighter.id%>">Delete</a>-->
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,137 @@
+== README
+
+My app is to show the details of MMA fights with the particular interest of developing heuristics on judges scoring.
+CUrrently, it just maintains all the details required to develop such statistics. That would include a fight, the fighters
+in that fight, the fight card that fight was on, as well as the judges who scored that fight and their particular scoring
+of each round. Everything should seem failry straight forward, with some minor points.
+
+1) I have thre levels of user
+  1:  Somone viewing the site with no login
+  2: A user who has logged in. This allows them to alter most data on the site. I have limited each user to a unique email
+  3: An Admin account, as shown in my seeds file. I have in my seed file an admin account. The primary difference is that 
+    an admin can delete a judge as well as view all user accounts.
+The seed file contains two users. 
+admin with a password of test
+billy with a password of test
+
+2) Fighters cannot be deleted through Web Application. I originally included the functionality, but it just didn't make sense.
+If you delete a fighter, than you will have a hole for one of the fighters in the fight. If you had the wrong fighter in a 
+fight, you can just edit the fight. So deleting a fighter really didn't make much sense and cause more chaos than required
+because of it's dependencies. If a fighter needs to be deleted, it would be done by the administrator on the backend. Deleting
+fighters doesn't seem like a very common task.
+
+3) This is running off my home server I built from a raspberry pi running Raspbian (Version of Debian). Currently, it's using
+the basic rails server. The rails server in combination with cpu on the raspbian has some lag. Additionally, I am using simple
+Ip forwarding from my router. To configure the domain name to the external ip of my computer, I used a free and easy http://www.noip.com/
+My next step is to deploy with Apache and Passenger, and then configure without no-ip. Then when I ran rails serve, I had to bind to
+the local ip given by my router. If for whatever reason, you cannot hit the url, please email me at wjf136@uchicago.edu. While I 
+haven't had an issue yet, because I am running from my home, there is no redundancy if my internet goes down.
+
+4) A scorecard is automatically created when a fight is created. A scorecard can only be deleted through deleting a fight. There
+is a clear capability that will wipe out all the data on scorecard, but it will not delete it. This is for multiple reasons. One,
+it makes sense. Even if you don't have the data for a scorecard, it still exists with every fight. Additionally, it allows much cleaner
+method calling thoughout the views because it will provide a null for missing data in the scorecard, but not a null for the scorecard
+itself. This dramatically reduces error checking throughout the views and provides much cleaner overall code.
+
+Instructions:
+Github Repo: https://github.com/wfortin136/final.git
+URl: wjf13.ddns.net
+
+
+Rubric: 
+*****Domain Modeling:
+- At least 5 database-backed models, which must consist of at least 4 domain models, plus one User model
+Models:
+- User
+
+- Weightclass
+- Fight
+- Fighter
+- Judge
+- Fightcard
+- Scorecard
+- Judgescore
+
+- A least 1 many-to-many model association
+many-to-many
+- Fightcard to Weightclass through fight
+- To test
+- :run rails console
+- :Fightcard.first.weightclasses
+- :wc = Weightclass.find_by(:name => "Bantomweight")
+- :wc.fightcards
+
+Proper association methods
+- The models has many asscoiations. This was actually the most difficult part of my web app. Because there are so many
+dependencies, many that are non standard such as requiring fighter_1_id and fighter_2_id from a scorecard, many of the
+standard associations did not fit very nicely. I think the best example is getting the fights from each fighter. This is
+shown in the Fighter model. In particular, I had to use sql querry string to match fighter_1 OR fighter_2 in the scorecard.
+Then I needed a join from Fight to scorecard using the scorecard ids from the previous sql querry. This join leveraged a
+previous association between the two 
+
+Model validations as necessary
+-Validated input fileds for primary pieces such as fights had to have 2 fighters. A user required a unique email address.
+A fightcard and a fighter required a name. Basic things like that.
+
+A proper database seeds file
+The seeds file contains just enough fights, fight cards, fighters, and judges to test all the functionality. Then next step
+would be finishing the web scraping the fully populating the database with automated seeds file.
+
+********Controllers and Views
+At least one complete, RESTful database-backed resource
+- Fights
+- Fightcards
+- Judge
+- Scorecard
+
+Common site navigation throughout
+- I tried to be consistent as possible. This is primarily done through the navbar that allows consistent navigation. But it
+also shows through the embedded targets throughout the application.
+Secure password-based signup/sign-in/sign out functionality
+- This is shown through either the 2 users in the seeds file, or you can create a new standard user through the sign up functionality.
+
+Feature Choice: 
+- Deployed from my homeserver with the URL: wjf136.ddns.net
+
+Best Practices:
+
+-------------
+To Do:
+- Fix an IPv6 error I was getting from the router. Currently, I disabled IPv6 in order to properly deploy.
+- Add input for user scoring of live events
+
+- Finish writing ruby script that web scrapes Fight metric
+1) Get UFC fight cards
+2) Get fights from each card
+3) Get fighters at each card
+4) Get round by round stats from each fighter in each fight
+
+- Web scrape http://mmadecisions.com/
+1) Obtain judge round by round scores
+2) Map scorecards to fights
+---
+Environment:
+
+- Ruby version
+1) ruby 2.2.2p95
+2) rails 4.1.8
+
+- System dependencies
+
+* Configuration
+1) bundle install
+
+* Database creation
+1) rake db:migrate
+
+* Database initialization
+1) rake db:seed
+
+* Deployment instructions
+1) rails server :b <internal ip-address>
+2) or rails server (if running locally for testing)
+I also had additional dependencies with my unique system. Specifically, I had to configure the ports at my router, I had to disable IPv6
+on the specific ip address, and I required a couple additional gems in order to run rails on Debian. I needed execjs and nodejs, from 
+what I gathered, for the javascript dependencies. Either way, these are only on the deployed version of my app. Within the repo, I have only
+the gem files required to run on Mac Yosemite.
+

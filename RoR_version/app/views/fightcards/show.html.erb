@@ -1,0 +1,82 @@
+<div class="fightcard_summary">
+  <h1><%= @fightcard.name%>  </h1>
+    <% if session[:user_id] %>
+      <h4><%= link_to "[Edit]", "/fightcards/#{@fightcard.id}/edit"%> </h4>
+    <% else %>
+      <h4><a href="/sessions/new">Sign In</a>/<a href="users/new">Sign Up</a> to Change Fightcard</h4>
+    <% end %>
+  <table>
+    <tbody>
+      <tr> 
+        <th scope="row" width="40%"> Promotion: </th>
+        <td>  <%= @fightcard.promotion%></td>
+      </tr>
+      <tr> 
+        <th scope="row"> Location: </th>
+        <td>  <%= @fightcard.city%>, <%= @fightcard.state%>, <%=@fightcard.country%> </td>
+      </tr>
+      <tr> 
+        <th scope="row"> Date:  </th>
+        <td>  <%= @fightcard.date %>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<% if session[:user_id] %>
+  <h4><%= link_to "[Add Fight]", "/fights/new?fcid=#{@fightcard.id}" %> </h4>
+<%end %>  
+<div class="fightcard_fights">
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="4%"></th>
+        <th width="30%">Fight</th>
+        <th width="10%">Weightclass</th>
+        <th width="4%">Title</th>
+        <th width="13%">Winner</th>
+        <th width="20%">Result</th>
+        <th width="10%">Time</th>
+        <th width="4%"></th>
+      </tr>
+    </thead>  
+    <tbody>
+    <% @fightcard.fights.order('fight_num').each do |fight|%>
+      <tr>
+        <td>
+          <a class="btn btn-xs btn-primary pull-left" href="/fights/<%=fight.id%>">Select</a>
+        </td>
+        <td>
+          <%# Fight%>
+          <%= link_to fight.fighter_1.name, "/fighters/#{fight.fighter_1.id}"%> vs. <%= link_to fight.fighter_2.name, "/fighters/#{fight.fighter_2.id}"%>
+        </td>
+        <td>
+          <%# Weightclass%>
+          <%= fight.weightclass.name%>
+        </td>
+        <td>
+          <%# Championship%>
+          <%= fight.championship %>
+        </td>
+        <td>
+          <%# Winner%>
+          <%= fight.fighter_1.name %>
+        </td>
+        <td>
+          <%# method of finish%>
+          <%= fight.method %>
+        </td>
+        <td>
+          <%# fighttime%>
+          R<%= fight.round %> <%= fight.roundminutes%>: <%= fight.roundsecs%>
+        </td>
+        <td>
+          <% if session[:user_id] %>
+            <a class="btn btn-xs btn-success pull-left" data-method="delete" href="/fights/<%=fight.id%>">Delete</a>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,84 @@
+Summary
+
+I have been running all scripts from the command line. Please let me know if anything included
+does not work properly in workbench. I have only tested on the linux clusters from the command
+line.
+
+create_db_large.sql
+I made minor alterations to some of the tables to reduce redundancy in attributes. Now a fight
+does not have the fighters, but can be found through the Fightstats table which shows each
+fighter in each fight.
+
+I also added indexing to Fightstats and Judgescore because of how large these tables were.
+I added it for the the primary attribute I compare on, which is usually fightID.
+
+populate_db_large.sql
+This populates the table based off of external txt files. The files are created from the 
+fake_data.py script. All data is fake except for the UFC Events and the Locations. For
+those, I started webscraping from wikipedia using an external python library. Everything
+else is fake data. However, as seen in the script, while the data itself may be random,
+the logic behind the data is accurate. That is, no fighter can fight himself, no judge
+can score a fight twice, and an exponential distribution was used for designating championship
+fights versus a pure random int. This providesa  more real world accuracy where champ
+fights are a minority. The script can be run as follows
+
+> python3 fake_data.py
+
+When populating the database with the files, populate_db_large.sql must be run with 
+the local infile identifier as follows
+
+> mysql --local-infile -h mpcs53001 -u wjf136 -p wjf136DB < populate_db_large.sql
+
+Additionally, to populate derived views, please run 
+> mysql --local-infile -h mpcs53001 -u wjf136 -p wjf136DB < derived_tables.sql
+
+count.sql
+
+Originally, I used the information_schema.tables built within sql in order to get a count.
+However, this only gives estimed row counts, and turned out to be somewhat inaccurate. So
+I found a scipt online that gets the real count for each table. I made slight alterations
+in order to fit my purpose. The source of the script is given within count.sql.
+
+query6.sql
+
+                       | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+-----------------------|---|---|---|---|---|---|---|---|---|----|
+Aggregate w/ group by  | x | x | x | x | x | x |   |   |   |    |
+Aggregate w/o group by |   |   |   |   |   |   | x |   |   |    |
+Natural Join           | x |   |   |   |   |   |   |   |   |    |
+Inner Join             | x |   | x | x | x | x |   | x | x |  x |
+Using                  |   | x | x |   |   | x |   |   |   |    |
+Outer Join             |   |   |   |   |   | x | x |   | x |  x |
+                         
+I did a general timing run on all the queries to determine if any were way too long.
+Results below. The only unreasonable query was query 2 which came in at almost 2 minutes.
+I made query 3 (Query ID 4 below) that made this much more efficient using joins. The other
+slightly slow one was in query 7 (Query ID 8 below) which took 30 seconds. I came up with
+a clean alternative that drasticallyreduced calulation time.
+
+Query_ID  Duration  Query
+1 0.13944150  select fightcardName, F1.fighterName, F2.fighterName, C.className\nfrom Fight F\nnatural join Fightcard\ninner join Fightstats as A\non F.fightID = A.fightID\ninner join Fightstats as B\non B.fightID = A.fightID\ninner join Fighter as F1\non F1.fighterID = A.fighterID\ninner join Fighter as F2\non F2.fighterI
+2 112.92732275  select F.fighterName as Fighter\nfrom Fightstats B\njoin Fighter as F\nusing (fighterID)\nwhere B.fighterID != 94 AND B.fightID in(\n  select fightID\n  from Fightstats A\n  where A.fighterID = 94\n  group by fightID)\ngroup by Fighter
+3 0.11685600  select fightcardName, F1.fighterName, F2.fighterName, C.className\nfrom Fight F\nnatural join Fightcard\ninner join Fightstats as A\non F.fightID = A.fightID\ninner join Fightstats as B\non B.fightID = A.fightID\ninner join Fighter as F1\non F1.fighterID = A.fighterID\ninner join Fighter as F2\non F2.fighterI
+4 0.09908975  select F.fighterName as Fighter\nfrom Fightstats B\njoin Fighter as F\nusing (fighterID)\ninner join Fightstats A\non B.fightID = A.fightID\nwhere A.fighterID = 94 and B.fighterID != 94\ngroup by Fighter
+5 0.11910200  select F.fighterName, sum(B.str_landed)/count(*) str_received_per_round\nfrom Fightstats A\ninner join Fightstats B\non A.fightID = B.fightID\ninner join Fighter F\non F.fighterID = A.fighterID\nwhere A.fighterID <> B.fighterID and A.round = B.round\ngroup by A.fighterID\norder by str_received_per_round des
+6 0.11526050  select A.fighterID, (1-sum(B.td_com)/sum(B.td_att)) td_defense\nfrom Fightstats A\ninner join Fightstats B\non A.fightID = B.fightID\nwhere A.fighterID <> B.fighterID and A.round = B.round\ngroup by A.fighterID\norder by td_defense desc
+7 0.10745750  select Fighter.fighterName, count(*) num_fights\nfrom (\n  \n  select FS.fightID fightID, FS.fighterID fighterID\n  from Fightstats FS\n  inner join(\n    select nontitle_f fighterID\n    from (\n      \n      select B.fighterID nontitle_f\n      from Fight A\n      join Fightstats B using (fightID)\n      wher
+8 33.25305625 select count(*)/(select count(*) from Judgescore)\nfrom Judgescore A \n  left outer join (\n    select judgescoreID\n    from Judgescore\n    where score > 8) B \n  on A.judgescoreID = B.judgescoreID\nwhere B.judgescoreID is Null
+9 0.01193925  select (select count(*) from Judgescore where score<9)/count(*)\nfrom Judgescore A
+10  0.67226775  select distinct A.fightID, A.judgeID, A.round, A.fighterID\nfrom Judgescore A\ninner join Judgescore B on A.fightID = B.fightID and A.judgeID = B.judgeID\nwhere A.score>B.score and A.round = B.round
+11  7.13630200  select *\nfrom(\n  select distinct FS.fightID, FS.round, Y.fighterID Takedowns, X.fighterID Strikes\n  from Fightstats FS\n    inner join (\n      select C.fightID fightID, C.round round, C.fighterID\n      from Fightstats C\n      inner join Fightstats D on D.fightID = C.fightID\n      where C.td_com>D.td_
+12  12.67776250 select distinct Score.fightID, Score.judgeID, Score.round, Score.fighterID, Stats.Takedowns, Stats.Strikes\nfrom (\n  select distinct A.fightID, A.judgeID, A.round, A.fighterID\n  from Judgescore A\n  inner join Judgescore B on A.fightID = B.fightID and A.judgeID = B.judgeID\n  where A.score>B.score and 
+
+I also did another timing run between a temp table and a nested query, this time
+with a much larger data set and more complicated query. I did this for query
+10, with the results shown below. With indexing for Judgescore and Fightstats,
+pure queries once again far out perform temporary tables. Not to mention,
+once you create the temp table and perform operations on the temp table,
+you lose optimizations you may have gained through your defined indexing.
+
+Query_ID  Duration  Query
+1 12.91269325 select distinct Score.fightID, Score.judgeID, Score.round, Score.fighterID, Stats.Takedowns, Stats.Strikes\nfrom (\n  select distinct A.fightID, A.judgeID, A.round, A.fighterID\n  from Judgescore A\n  inner join Judgescore B on A.fightID = B.fightID and A.judgeID = B.judgeID\n  where A.score>B.score and 
+2 2.86803950  create temporary table Score\nselect distinct A.fightID, A.judgeID, A.round, A.fighterID\nfrom Judgescore A\ninner join Judgescore B on A.fightID = B.fightID and A.judgeID = B.judgeID\nwhere A.score>B.score and A.round = B.round
+3 8.73571700  create temporary table Stats\nselect distinct FS.fightID, FS.round, Y.fighterID Takedowns, X.fighterID Strikes\nfrom Fightstats FS\n  inner join (\n    select C.fightID fightID, C.round round, C.fighterID\n    from Fightstats C\n    inner join Fightstats D on D.fightID = C.fightID\n    where C.td_com>D.td_
+4 38.60121975 select Score.fightID, Score.judgeID, Score.round, Score.fighterID, Stats.Takedowns, Stats.Strikes\nfrom Score\nleft outer join Stats on Score.fightID = Stats.fightID and Score.round = Stats.round

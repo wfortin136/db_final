@@ -1,0 +1,82 @@
+<html>
+<head>
+  <title>DB Final: Judges</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" />
+</head>
+<body>
+  <% require 'mysql' %>
+  <%# my = Mysql.new(hostname, username, password, databasename)%> 
+  <% con = Mysql.new('localhost', 'mma_site', 'mpcs53001', 'mma')%>
+
+  <% @query = "select judges.judgeName, ONE.num_fights, TWO.avg_dev
+  from (
+    select judge_id, count(*) num_fights
+    from( 
+      select judge_id, fight_id from judgescores
+      group by judge_id, fight_id) A
+    group by judge_id) ONE
+  inner join (
+    select A.j_id j_id, avg(A.dev) avg_dev
+    from (
+    select JS.judge_id j_id, JS.fighter_id f_id, JS.round round, abs(JS.score - A.avg_score) dev
+        from judgescores JS
+          inner join (
+            select J.fight_id, J.fighter_id, J.round, avg(score) as avg_score
+            from judgescores J
+            inner join fighters F on F.fighter_id = J.fighter_id
+            group by J.fight_id, J.fighter_id, J.round) A
+          on A.fight_id = JS.fight_id and A.fighter_id = JS.fighter_id and 
+          A.round = JS.round) A
+    group by A.j_id) TWO
+  on ONE.judge_id = TWO.j_id
+  inner join judges on judges.judge_id = ONE.judge_id
+  order by TWO.avg_dev"%>
+  
+  <% @judges = con.query(@query)%>
+  <%  con.close%>
+  <h1> Judges </h1>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="20%">Judge</th>
+        <th width="10%">Number of Fights</th>
+        <th width="20%">Average Score Deviation</th>
+        <th width="44%"></th>
+      </tr>
+    <tbody>
+      <% @judges.each do|judge|%>  
+      <%# puts fighter%>
+      <tr>
+        <td>
+          <%# fighter[0] %>
+        </td>
+        <td>
+          <%# Fighter%>
+          <%= judge[0] %>
+        </td>
+        <td>
+          <%# Wins%>
+          <%= judge[1] %>
+        </td>
+        <td>
+          <%# Losses%>
+          <%= judge[2] %>
+        </td>
+        <td>
+          <%# Draws%>
+          <%# fighter[4] %>
+        </td>
+        <td>
+          <%# No Contests%>
+          <%# fighter[5] %>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
+</html>

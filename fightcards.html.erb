@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>DB Final: Fightcards</title>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+  <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" />
+</head>
+<body>
+  <% require 'mysql' %>
+  <%# my = Mysql.new(hostname, username, password, databasename)%> 
+  <% con = Mysql.new('localhost', 'mma_site', 'mpcs53001', 'mma')%>
+  <% @query = "select FC.fightcard_id, P.name, FC.fightcardName, L.city, L.state, L.country, FC.fightDate 
+          from fightcards FC 
+          inner join promotions as P on P.promotion_id = FC.promotion_id
+          inner join locations as L on L.location_id = FC.location_id" %>
+  <% @fightcards = con.query(@query)%>
+  <% con.close%>
+
+  <h1> Fightcards </h1>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th width="5%"></th>
+        <th width="7%">Promotion</th>
+        <th width="30%">Fightcard Name</th>
+        <th width="20%">Location</th>
+        <th width="13%">Date</th>
+        <th width="25%"></th>
+      </tr>
+    <tbody>
+      <% @fightcards.each do|fightcard|%>  
+      <%# puts fightcard%>
+      <tr>
+        <td>
+          <%# fighter[0] %>
+        </td>
+        <td>
+          <%# Promotion%>
+          <%= fightcard[1] %>
+        </td>
+        <td>
+          <%# Fightcard%>
+          <a href="fightcarddetails.html.erb?fcid=<%=fightcard[0]%>"><%= fightcard[2] %></a>
+        </td>
+        <td>
+          <%# Location%>
+          <%= "#{fightcard[3]}, "%>
+          <% if not fightcard[4] == 'NULL' %>
+          <%= "#{fightcard[4]}, "%>
+          <% end%>
+          <%= "#{fightcard[5]}" %>
+        </td>
+        <td>
+          <%# Date%>
+          <%= fightcard[6] %>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
+</html>

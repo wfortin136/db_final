@@ -1,0 +1,200 @@
+::Parlee VonRueden::30::17::4::3
+::Melissia Huel::28::11::4::5
+::Valeria Vandervort::23::13::3::1
+::Ivory Cassin::15::20::10::2
+::Mitchel Ebert::35::10::2::0
+::Lissa Kautzer::17::13::9::1
+::Manson Harvey::14::14::10::4
+::Porsche Collier::27::6::7::5
+::Casper Hamill::16::17::9::2
+::Maurice Shanahan::26::9::2::3
+::Floyd Shields PhD::15::5::1::4
+::Ms. Nolie Cartwright::40::20::0::2
+::Rashaad Sipes::35::7::9::3
+::Lilian Wilkinson::40::10::3::5
+::Dr. Demarion Orn::22::15::9::2
+::Geovanni Bartell::36::7::10::0
+::Zaid Homenick::29::18::1::5
+::Mavis Reilly::24::14::1::0
+::Jayden Pfeffer::35::16::1::0
+::Miss Althea Zulauf::29::16::3::4
+::Kia Hilll DVM::25::7::6::0
+::Arlan Greenholt::15::19::4::5
+::Julia Funk::26::6::6::3
+::Jaylen Lang MD::33::16::2::0
+::Peyton Blanda::15::16::1::2
+::Roxie Lang::25::17::1::0
+::Orlin Kemmer::26::20::9::3
+::Gregg Botsford::38::10::9::3
+::Besse Quitzon::12::18::3::2
+::Carlyle Gerhold::36::15::10::4
+::Ashlee Wuckert::13::19::2::1
+::Alaya Fisher PhD::37::8::7::3
+::Ansel Balistreri::40::11::1::0
+::Miss Ayana King::25::8::8::4
+::Candida Stiedemann::25::12::6::2
+::Alwina Bartoletti DVM::17::5::9::3
+::Arlo Cremin::25::8::4::4
+::Dr. Emory McDermott PhD::30::16::1::0
+::Iva Cruickshank::36::15::0::0
+::Lavar Ferry::38::16::0::5
+::Talmadge Bashirian::20::5::7::3
+::Douglas Lueilwitz::36::14::7::4
+::Dallin Sanford::20::19::1::5
+::Odessa West::31::11::1::3
+::Loria Rodriguez DDS::25::16::9::1
+::Dr. Doss Grant MD::32::9::5::5
+::Maranda Volkman::21::13::1::4
+::Alicia Renner::22::20::0::2
+::Gabrielle Ortiz::24::5::7::4
+::Dr. Duff Fahey::23::9::5::5
+::Joyce Romaguera PhD::10::10::10::5
+::Emelia Purdy::36::17::1::5
+::Jeffie Koss::11::9::6::4
+::Lisandro Yost DVM::12::5::5::0
+::Loren Runolfsson PhD::10::17::8::1
+::Mr. Wade Wilderman V::39::7::2::1
+::Dr. Inell Walsh DDS::37::15::10::5
+::Jewell Fisher::19::15::0::3
+::Dr. Carmine Koss::23::13::9::2
+::Daria Kemmer::25::11::8::4
+::Mr. Marcellus Okuneva::29::10::7::5
+::Isadore Kreiger::34::7::4::1
+::Vivian Morar::11::14::6::1
+::Tashina Emard DVM::24::5::9::2
+::Ms. Carlyn Reichert::22::6::6::3
+::Attie Emard::23::6::9::3
+::Crysta Ankunding::17::12::8::0
+::Miss Geraldine Morar::34::19::0::4
+::Myrtis Schuppe::27::20::0::3
+::Donat Daniel::27::11::10::0
+::Mrs. Cammie Kunde DVM::12::8::6::5
+::Anneliese Rogahn DDS::27::11::6::5
+::Rob Ledner::11::12::8::5
+::Ole Stracke::33::12::10::4
+::Zina Sanford MD::33::15::6::0
+::Katharina Lynch::16::10::2::4
+::Lugenia Doyle::39::12::10::3
+::Margeret Beahan DVM::28::5::10::4
+::Lethia Hegmann PhD::14::7::10::3
+::Mr. Bartholomew Bode DVM::12::20::7::1
+::Cathi Bailey MD::13::16::9::4
+::Dr. Ayaan Orn::37::6::1::4
+::Miss Pearlene Kunze MD::18::6::0::3
+::Sasha Kutch::26::20::10::2
+::Miss Tonya Huels DDS::24::14::10::2
+::Dr. Aileen Schaefer PhD::19::16::10::4
+::Forest Collier::31::15::8::0
+::Gregg Will::32::20::0::1
+::Clint Wolf::15::17::9::5
+::Edra Leuschke::32::10::1::5
+::Barron Davis::33::16::0::4
+::Dr. Jaquez Anderson::26::15::7::4
+::Vito Johnston::33::11::3::3
+::Megan Corkery::20::18::6::5
+::Christ Waelchi::22::19::8::4
+::Edgar Wisozk::21::6::1::4
+::Jakobe Lindgren::28::12::4::5
+::Rupert Wehner::12::9::3::3
+::Bluford Schultz III::20::15::3::1
+::Odell Klein III::36::19::10::4
+::Beatrix Boyer::10::5::3::0
+::Coty Davis::34::12::7::2
+::Sadie Nikolaus DVM::40::11::2::5
+::Chastity Wilkinson::32::19::5::4
+::Loring Franecki::11::11::10::3
+::Bobby Swaniawski::30::20::1::5
+::Kevin Bartell::36::15::10::2
+::Celesta Boyle MD::16::16::1::5
+::Crystal Bradtke::17::11::10::2
+::Cassidy Maggio::27::12::9::2
+::Ms. Keila Murazik::23::9::5::5
+::Evander Schultz::20::20::3::5
+::Juluis Tromp::23::20::2::5
+::Mr. Isaac Anderson::11::19::8::3
+::Bridger Lemke::28::10::7::0
+::Dr. London Rolfson MD::35::20::2::0
+::Dr. Jacques Nader Sr.::20::10::2::1
+::Gail Koch::25::19::2::2
+::Ms. Lassie VonRueden::32::10::4::5
+::Dewey Rolfson Jr.::36::19::7::4
+::Angelia Jacobs::19::6::8::0
+::Edward Paucek I::22::17::1::5
+::Dr. Marcell Gleichner::39::5::7::5
+::Adalyn Fisher::39::11::9::3
+::Lynette Rempel::14::8::5::4
+::Emilie Abshire PhD::18::10::2::3
+::Aurilla Rolfson::28::17::10::1
+::Ariana Abernathy::21::19::7::1
+::Jeff Kris::25::11::10::1
+::Reilly Olson::39::16::0::1
+::Evertt Rogahn::32::16::2::5
+::Gail Bechtelar::11::18::10::1
+::Robbie D'Amore::34::15::7::3
+::Ms. Belia Weber::20::13::7::0
+::Dr. Alissa Jones::12::18::4::4
+::Ashlee Wiegand::10::7::2::4
+::Anastacio Wintheiser::30::17::3::4
+::Mitchell Feil::25::5::7::5
+::Gannon Kunze::19::20::6::3
+::Ms. Margie Kassulke MD::18::9::4::2
+::Dr. Delmas Mayer::27::19::9::2
+::Mrs. Haruko Miller::32::9::4::3
+::Karen Thompson PhD::27::12::5::5
+::Mr. Hobert Heaney::14::10::4::0
+::Dr. Candyce Kunze::35::14::4::3
+::Dr. Sonya McCullough PhD::14::14::10::2
+::Eda O'Connell::33::17::5::2
+::Delmas Kris::33::9::9::1
+::Zaida Auer MD::37::14::9::3
+::Dr. Fletcher Mante PhD::31::20::0::0
+::Nichelle Schaden MD::30::18::2::2
+::Virdie Wyman::19::6::7::1
+::Jeanna Okuneva::25::15::0::1
+::Mr. Gaylord Toy::14::8::0::4
+::Ford Gulgowski::31::16::6::1
+::Bennie Moen::11::9::0::5
+::Rush Little PhD::32::12::5::4
+::Lue Conn::23::16::0::3
+::Miss Maureen Quitzon::25::18::9::2
+::Dr. Booker Steuber::26::20::6::0
+::Jaylen Schuppe::30::20::1::3
+::Eloy Deckow::27::5::1::4
+::Louie Hegmann::17::18::8::5
+::Hamp Schuster::38::16::2::1
+::Elda Wyman::18::19::1::2
+::Dr. Kamden Hegmann PhD::17::10::4::3
+::Newell Haley::18::18::1::5
+::Trenton Robel::18::11::7::3
+::Bryant Littel::39::9::2::1
+::Miss Miriam Green PhD::15::8::0::5
+::Raleigh Roob::19::17::7::4
+::Della Doyle::16::20::4::3
+::Ms. Elsie Flatley::37::5::6::5
+::Dominic Langworth::29::19::10::3
+::Marvin Leffler Jr.::23::19::7::3
+::Carleton McCullough::18::14::7::3
+::Tiera Hoeger::40::18::3::3
+::Zelia Dicki::25::18::0::2
+::Nanci Stehr DDS::15::17::10::0
+::Mr. Corbett Rice::11::14::6::2
+::Ms. Brooklyn Harber::32::11::4::4
+::Billy Collier::40::15::10::4
+::Vincent Waters::16::6::5::3
+::Dr. Bristol Morissette PhD::18::8::7::3
+::Alphons Green::34::6::9::3
+::Starr Halvorson::38::17::7::3
+::Orlin Terry::13::11::0::0
+::Alek Klocko::38::9::6::5
+::Mr. Duff Leuschke::18::20::6::0
+::Mauricio Heidenreich::28::9::8::5
+::Olin Herzog::29::13::4::2
+::Mr. Duwayne Dietrich V::19::11::4::0
+::Miss Jeanna Kub::19::5::3::2
+::Alisson Walter MD::15::8::5::0
+::Kiara Boehm::22::9::2::4
+::Jimena Fahey DDS::20::7::9::5
+::Elder Harvey Jr.::31::16::6::3
+::Bonny Nitzsche::26::8::6::4
+::Vlasta Roob::27::19::10::0
+::Dr. Bradley Ritchie::17::6::0::5

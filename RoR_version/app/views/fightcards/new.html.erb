@@ -1,0 +1,41 @@
+<h1> Enter New Fightcard </h1>
+
+<% if @fightcard.errors.any? %>
+  <ul class="list-unstyled text-danger">
+    <% @fightcard.errors.full_messages.each do |msg| %>
+      <li><strong><%= msg %></strong></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_tag "/fightcards/" do%>
+  <div>
+    <label> Fightcard </label>
+    <input type="text" name="name" value="<%= @fightcard.name %>">
+  </div>
+
+  <div>
+    <label> Promotion </label>
+    <input type="text" name="promotion" value="<%= @fightcard.promotion %>">
+  </div>
+  
+  <div>
+    <label> Location </label>
+    <div>
+      <label> City </label>
+      <input type="text" name="city">
+      <label> State </label>
+      <input type="text" name="state" >
+      <label> Country</label>
+      <input type="text" name="country" >
+    </div>
+  </div>
+  
+  <div>
+    <label> Date </label>
+    <div>
+      <%=date_field(:fc, :date, value: @fightcard.date) %>
+    </div>
+  </div>
+
+  <input type="submit" value="Create Fightcard">
+<% end %>

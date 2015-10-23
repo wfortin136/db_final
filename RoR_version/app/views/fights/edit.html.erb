@@ -1,0 +1,83 @@
+<h1> Edit Current Fight </h1>
+
+<%= form_tag "/fights/#{@fight.id}", :method => "patch" do%>
+  <div>
+    <label> Fightcard </label>
+    <select name="fightcard_id">
+      <% Fightcard.all.each do |fc| %>
+        <% if @fightcard == fc %>
+          <option value="<%= fc.id %>" selected><%=fc.name %></option>
+        <% else %>
+          <option value="<%= fc.id %>"><%=fc.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+
+  <div>
+    <label> Fighter 1 </label>
+    <select name="fighter1_id">
+      <% Fighter.all.each do |f| %>
+        <% if @fight.fighter_1.id == f.id %>
+          <option value="<%= f.id %>" selected><%=f.name %></option>
+        <%else %>
+          <option value="<%= f.id %>"><%=f.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+
+  <div>
+    <label> Fighter 2 </label>
+    <select name="fighter2_id">
+      <% Fighter.all.each do |f| %>
+        <% if @fight.fighter_2.id == f.id %>
+          <option value="<%= f.id %>" selected><%=f.name %></option>
+        <%else %>
+          <option value="<%= f.id %>"><%=f.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+
+  <div>
+    <label> Weightclass </label>
+    <select name="weightclass">
+      <% Weightclass.all.each do |wc| %>
+        <% if @fight.weightclass == wc %>
+          <option value="<%= wc.id %>" selected><%=wc.name %></option>
+        <% else %>
+          <option value="<%= wc.id %>"><%=wc.name %></option>
+        <% end %>
+      <% end %>
+    </select>
+  </div>
+  
+  <div>
+    <label>Fight Number on Card</label>
+    <input type="text" name="fight_num" value="<%= @fight.fight_num%>">
+  </div>
+  
+  <div>
+    <label> Card Level</label>
+    <input type="text" name="card_level" value="<%= @fight.card_level%>">
+  </div>
+  
+  <div>
+    <label> Fight Time</label>
+    <div>
+      <label> Round </label>
+      <input type="number" name="round" value="<%= @fight.round%>">
+      <label> Minutes </label>
+      <input type="number" name="min" value="<%= @fight.roundminutes%>">
+      <label> Seconds</label>
+      <input type="number" name="sec" value="<%= @fight.roundsecs%>">
+    </div>
+  </div>
+
+  <div>
+    <label> Method of Finish</label>
+    <input type="text" name="method" value="<%= @fight.method %>">
+  </div>
+  <input type="submit" value="Update Fight">
+<% end %>
