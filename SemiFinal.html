@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>DB Final: Index</title>
+</head>
+<body>
+  <h1>MPCS 53001 Web UI Using Ruby and CGI</h1>
+  <h3>List of Functions:</h3>
+    <ul>
+      <li> (1) <a href="tables.html.erb">List Tables</a>: Displays all the tables and their row counts from the database</li>
+      <li> (2) <a href="fightcards.html.erb">List Fightcards</a>: Displays all Fightcards and some general details of fightcard</li>
+        <ul>
+          <li> (3) List Fights on Fightcard: Get the fights on a fightcard by selecting the fightcard from the Fightcard list (function 2) </li>
+          <li> (4) List Fight Stats: Get the fight stats of a fight selected from Fightcarddetails.html.erb (function 3)</li>
+          <li> (5) List Judgescores: Judgescores are combined with the fight stats in table in Fightdetails.html.erb</li>
+        </ul>	
+      <li> (6) <a href="fighters.html.erb">List Fighters</a></li>
+        <ul>
+          <li> (7) List round and total stats of fighter, selected from the list of fighters in fighters.html.erb</li>
+        </ul>	
+      <li> (8) <a href="judges.html.erb">List Judges</a></li>
+      <li> Search Database: Seach for a term across database. Functions will search across Fightcard Names, Fightcard Locations, 
+      Fighter Names and Judges Names.</li>
+        <ul>
+          <li> (9) Search Fightcards</li>
+          <li> (10) Search Fighters</li>
+          <li> (11) Search Judges</li>
+        </ul>	
+        <form method=get action="search.html.erb">
+          <b>Enter A Search Term:</b><br />
+          <input type="text" name="search"><br />
+          <input type="submit" value="Submit">
+        </form>
+        Example Search Terms:
+        <ul>
+          <li type="square">"for": Return across all 3</li>
+          <li type="square">"Fight": Return only on Fightcards</li>
+          <li type="square">"Fahey": Return only on Fighters</li>
+          <li type="square">"Chauncy": Return only on Judges</li>
+        </ul>
+      </ul>
+  <h3> Description</h3>
+  <p>I decided to implement my project with Ruby on Rails. After some testing on the
+  linux server it became clear that the easiest way to deploy using RoR, would be to
+  deploy on a server where I had root privelages. Prof. Freeman authorized this as long as
+  I followed the same tree structure, /~<username>/CS/mpcs53001/, which I have. 
+  As such, I am currently running my UI on my home server built from a Raspberry Pi. 
+  The full environment is as follows:</p>
+  <ul>
+    <li>Hardware: Raspberry Pi 2 Model B</li>
+    <li>OS: Raspbian 7; Debian 7 (Wheezy)</li>
+    <li>HTTP Server: Apache 2.2.22 (Debian)</li>
+    <li>MySQL Server: MySQL 5.5.46-0+deb7u1 (Debian)</li>
+    <li>Ruby: Ruby 2.2.1p85 (2015-02-26 revision 49769)</li>
+  </ul>
+  <p>Instead of deploying under the full rails framework, I have used Ruby in a very 
+  "non-rails" way by not leveraging the MVC rails framework. Instead, I have tried to
+  mimic the deployment of php as closely as possible with Ruby.In order to do this, my
+  server needed to convert html.erb files into CGI scripts. Once I was able to 
+  automatically convert embedded ruby into CGI commands, I could deploy *html.erb
+  just like *.php files.</p>
+  </p> Additionally, I'm currently in the process of implementing the database within
+  rails. This is under the RoR_version directory in the home diretory.This is not
+  complete yet, but will provide a much cleaner implementation than the current 
+  html.erb files</p>
+  <p>All files can be viewed on Github at the following repo: <a href="https://github.com/wfortin136/db_final">DB Final Github Repo </a> </p>
+  <p>Current Website url: https://wjf136.ddns.net/~wjf136/CS/mpcs53001/</p>
+  <p> One Additional Note: Because I am running this on my home server, I am at the mercy
+  of my building network infrastructure as well as internet provider. If there are any
+  issues with accessing the url, please contact me immediately at wjf136@uchicago.edu 
+  so I can trouble shoot.</p>
+</body>
+</html>
